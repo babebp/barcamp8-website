@@ -1,190 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Barcamp 8</title>
-    <link rel="stylesheet" href="../dist/output.css" />
-  </head>
-  <body>
-    <!-- Header + Model Y -->
-    <div
-      class="relative bg-[url('https://digitalassets.tesla.com/tesla-contents/image/upload/h_2400,w_2880,c_fit,f_auto,q_auto:best/Homepage-Model-Y-Global-Desktop')] h-screen bg-center bg-cover"
-    >
-      <!-- Header -->
-      <div class="pt-5 flex justify-between font-bold items-center">
-        <div class="ml-8">
-          <svg
-            class="w-32 cursor-pointer"
-            viewBox="0 0 342 35"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z"
-              fill="currentColor"
-            ></path>
-          </svg>
-        </div>
-        <div class="hidden lg:inline">
-          <ul class="flex space-x-2 text-sm">
-            <li
-              class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer"
-            >
-              Model S
-            </li>
-            <li
-              class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer"
-            >
-              Model 3
-            </li>
-            <li
-              class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer"
-            >
-              Model X
-            </li>
-            <li
-              class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer"
-            >
-              Model Y
-            </li>
-            <li
-              class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer"
-            >
-              Solar Roof
-            </li>
-            <li
-              class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer"
-            >
-              Solar Panels
-            </li>
-          </ul>
-        </div>
-        <div class="">
-          <ul class="flex space-x-4 mr-2 text-sm">
-            <li
-              class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3"
-            >
-              Shop
-            </li>
-            <li
-              class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3"
-            >
-              Account
-            </li>
-            <li
-              class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3"
-            >
-              Menu
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Top Section -->
-      <div class="flex flex-col absolute top-20 left-[50%] translate-x-[-50%]">
-        <h1 class="text-[40px] m-auto font-bold">Model Y</h1>
-        <p class="whitespace-nowrap pt-1 text-[16px]">
-          Order Online for
-          <span
-            class="underline underline-offset-4 hover:decoration-2 cursor-pointer"
-            >Touchless Delivery</span
-          >
-        </p>
-      </div>
-      <!-- Bottom Section -->
-      <div
-        class="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex flex-col md:flex-row md:space-x-4"
-      >
-        <button
-          class="uppercase bg-gray-800 w-96 h-10 text-white rounded-full md:w-60"
-        >
-          Custom order
-        </button>
-        <button
-          class="mt-2 md:mt-0 uppercase bg-slate-200 w-96 h-10 text-gray-900 rounded-full md:w-60"
-        >
-          Existing Inventory
-        </button>
-      </div>
-      <!-- Bouncing chevron -->
-      <div class="absolute bottom-3 left-[50%] translate-x-[-50%]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6 animate-bounce"
-        >
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barcamp 8</title>
+  <link rel="stylesheet" href="../dist/output.css" />
+</head>
+
+<body>
+  <!-- Header + Model Y -->
+  <div
+    class="relative bg-[url('https://digitalassets.tesla.com/tesla-contents/image/upload/h_2400,w_2880,c_fit,f_auto,q_auto:best/Homepage-Model-Y-Global-Desktop')] h-screen bg-center bg-cover">
+    <!-- Header -->
+    <div class="pt-5 flex justify-between font-bold items-center">
+      <div class="ml-8">
+        <svg class="w-32 cursor-pointer" viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg">
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-          />
+            d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z"
+            fill="currentColor"></path>
         </svg>
       </div>
+      <div class="hidden lg:inline">
+        <ul class="flex space-x-2 text-sm">
+          <!-- <li class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer">
+            Model S
+          </li>
+          <li class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer">
+            Model 3
+          </li>
+          <li class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer">
+            Model X
+          </li>
+          <li class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer">
+            Model Y
+          </li>
+          <li class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer">
+            Solar Roof
+          </li>
+          <li class="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer">
+            Solar Panels
+          </li> -->
+        </ul>
+      </div>
+      <div class="">
+        <ul class="flex space-x-4 mr-2 text-sm">
+          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">
+            Home
+          </li>
+          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">
+            About
+          </li>
+          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">
+            Gallery
+          </li>
+          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">
+            Contact
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Top Section -->
+    <div class="flex flex-col absolute top-20 left-[50%] translate-x-[-50%]">
+      <!-- <h1 class="text-[40px] m-auto font-bold">Model Y</h1>
+      <p class="whitespace-nowrap pt-1 text-[16px]">
+
+        <span class="underline underline-offset-4 hover:decoration-2 cursor-pointer">Touchless Delivery</span>
+      </p> -->
+    </div>
+    <!-- Bottom Section -->
+    <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex flex-col md:flex-row md:space-x-4">
+      <!-- <button class="uppercase bg-gray-800 w-96 h-10 text-white rounded-full md:w-60">
+        Custom order
+      </button>
+      <button class="mt-2 md:mt-0 uppercase bg-slate-200 w-96 h-10 text-gray-900 rounded-full md:w-60">
+        Existing Inventory
+      </button> -->
+    </div>
+    <!-- Bouncing chevron -->
+    <div class="absolute bottom-3 left-[50%] translate-x-[-50%]">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6 animate-bounce">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+      </svg>
+    </div>
+  </div>
+
+  <!--Barcamp Sk8 -->
+  <div
+    class="relative bg-[url('https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Homepage-Model-X-Desktop-LHD')] h-screen bg-center bg-cover">
+    <!-- Top Section -->
+    <div class="flex flex-col absolute top-20 left-[50%] translate-x-[-50%]">
+      <h1 class="text-[40px] m-auto font-bold">Barcamp Songkhla 8</h1>
+
+      <p class="whitespace-nowrap pt-5 text-[30px] m-auto font-bold ">
+        วันจัดงาน
+      </p>
+      <p class="whitespace-nowrap pt-1 text-[25px] m-auto">
+        27 มกราคม 2567 </p>
+      <p class="whitespace-nowrap pt-5 text-[30px] m-auto font-bold">
+        สถานที่จัดงาน
+      </p>
+      <p class="whitespace-nowrap pt-1 text-[25px] m-auto">
+        อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC) มหาวิทยาลัยสงขลานครินทร์ ชั้น 8
+      </p>
+    </div>
+    <!-- Bottom Section -->
+    <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex flex-col md:flex-row md:space-x-4">
+      <button class="uppercase bg-gray-800 w-96 h-10 text-white rounded-full md:w-60">
+        Map
+      </button>
+      <!-- <button class="mt-2 md:mt-0 uppercase bg-slate-200 w-96 h-10 text-gray-900 rounded-full md:w-60">
+        Existing Inventory
+      </button> -->
+    </div>
+  </div>
+
+  <!-- What is Barcamp? -->
+  <div
+    class="relative bg-[url('https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Homepage-Model-X-Desktop-LHD')] h-screen bg-center bg-cover">
+    <!-- Top Section -->
+    <div class="flex flex-col absolute top-20 left-[50%] translate-x-[-50%]">
+      <h1 class="text-[40px] m-auto font-bold">What is Barcamp?</h1>
+      <p class="whitespace-nowrap pt-1 text-[16px] m-auto">
+        หลายคนอาจสงสัยว่า "บาร์แคมป์" คืออะไร?
+        <!-- <span class="underline underline-offset-4 hover:decoration-2 cursor-pointer">Touchless Delivery</span> -->
+      </p>
+      <p class="whitespace-nowrap pt-1 text-[16px] m-auto">
+        บาร์แคมป์ (Barcamp) มักถูกเรียกว่า "งานสัมมนานอกกรอบ" (un-conference)
+        โดยทั่วไปบาร์แคมป์เป็นการสนทนากันระหว่างผู้เข้าร่วมงานกันเอง
+      </p>
+      <p class="whitespace-nowrap pt-1 text-[16px] m-auto">
+        โดยหัวใจสำคัญของงาน คือ การรวบรวมคนที่ชื่นชอบในเทคโนโลยีมาเจอกัน มีสถานที่ให้เสวนาแลกเปลี่ยนทัศนคติระหว่างกัน
+        ซึ่งจะทำให้ทุกคนสามารถแชร์ความรู้ได้อย่างเต็มที่
+      </p>
     </div>
 
-    <!-- Model X -->
-    <div
-      class="relative bg-[url('https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Homepage-Model-X-Desktop-LHD')] h-screen bg-center bg-cover"
-    >
-      <!-- Top Section -->
-      <div class="flex flex-col absolute top-20 left-[50%] translate-x-[-50%]">
-        <h1 class="text-[40px] m-auto font-bold">Model X</h1>
-        <p class="whitespace-nowrap pt-1 text-[16px]">
-          Order Online for
-          <span
-            class="underline underline-offset-4 hover:decoration-2 cursor-pointer"
-            >Touchless Delivery</span
-          >
-        </p>
-      </div>
-      <!-- Bottom Section -->
-      <div
-        class="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex flex-col md:flex-row md:space-x-4"
-      >
-        <button
-          class="uppercase bg-gray-800 w-96 h-10 text-white rounded-full md:w-60"
-        >
-          Custom order
-        </button>
-        <button
-          class="mt-2 md:mt-0 uppercase bg-slate-200 w-96 h-10 text-gray-900 rounded-full md:w-60"
-        >
-          Existing Inventory
-        </button>
-      </div>
+    <!-- Bottom Section -->
+    <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex flex-col md:flex-row md:space-x-4">
+      <!-- <button class="uppercase bg-gray-800 w-96 h-10 text-white rounded-full md:w-60">
+        Custom order
+      </button>
+      <button class="mt-2 md:mt-0 uppercase bg-slate-200 w-96 h-10 text-gray-900 rounded-full md:w-60">
+        Existing Inventory
+      </button> -->
     </div>
+  </div>
 
-    <!-- Accessories -->
-    <div
-      class="relative bg-[url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto:best/Desktop_Accessories')] h-screen bg-center bg-cover"
-    >
-      <!-- Top Section -->
-      <div class="flex flex-col absolute top-20 left-[50%] translate-x-[-50%]">
-        <h1 class="text-[40px] m-auto font-bold">Accessories</h1>
-      </div>
-      <!-- Bottom Section -->
-      <div
-        class="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex flex-col md:flex-row md:space-x-4"
-      >
-        <button
-          class="uppercase bg-gray-800 w-96 h-10 text-white rounded-full md:w-60"
-        >
-          Shop Now
-        </button>
-      </div>
+  <!-- History -->
+  <div
+    class="relative bg-[url('https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Homepage-Model-X-Desktop-LHD')] h-screen bg-center bg-cover">
+    <!-- Top Section -->
+    <div class="flex flex-col absolute top-20 left-[50%] translate-x-[-50%]">
+      <h1 class="text-[40px] m-auto font-bold">History</h1>
+      <p class="whitespace-nowrap pt-1 text-[16px] m-auto">
+        บาร์แคมป์จัดขึ้นครั้งแรกเมื่อ พ.ศ. 2548 ที่เมืองพาโลอัลโต สหรัฐอเมริกา ได้
+        รับความนิยมจนมีการจัดบาร์แคมป์กระจายไปตามเมืองต่างๆ ทั่วโลกอย่าง รวดเร็ว
+      </p>
+      <p class="whitespace-nowrap pt-1 text-[16px] m-auto">
+        ในประเทศไทย บาร์แคมป์ได้จัดขึ้นครั้งแรกเมื่อวันที่ 26 มกราคม พ.ศ. 2551 ที่กรุงเทพมหานคร
+        จากนั้นได้มีผู้สนใจจัดงานตามจังหวัดต่างๆ ได้แก่ เชียงใหม่ สงขลา และ ภูเก็ต
+      </p>
+      <p class="whitespace-nowrap pt-1 text-[16px] m-auto">
+        สำหรับจังหวัดสงขลานั้นบาร์แคมป์จัดขึ้นครั้ง แรกเมื่อวันที่ 28 มิถุนายน พ.ศ. 2551 ณ ภาควิชาวิศวกรรมคอมพิวเตอร์
+        มหาวิทยาลัยสงขลานครินทร์ และก็ได้ดำเนินมาถึงครั้งที่ 7 ในปีนี้นี่เอง
+      </p>
     </div>
-    <footer class="flex pb-10 justify-center">
-      <ul class="flex flex-col md:flex-row md:space-x-4 items-center text-[12px] text-gray-500">
-        <li class="link">Tesla &copy 2022</li>
-        <li class="link">Privacy & Legal</li>
-        <li class="link">Contact</li>
-        <li class="link">Careers</li>
-        <li class="link">News</li>
-        <li class="link hidden md:inline">Engage</li>
-        <li class="link hidden md:inline">Location</li>
-      </ul>
-    </footer>
-  </body>
+    <!-- Bottom Section -->
+    <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex flex-col md:flex-row md:space-x-4">
+      <!-- <button class="uppercase bg-gray-800 w-96 h-10 text-white rounded-full md:w-60">
+        Custom order
+      </button>
+      <button class="mt-2 md:mt-0 uppercase bg-slate-200 w-96 h-10 text-gray-900 rounded-full md:w-60">
+        Existing Inventory
+      </button> -->
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <div
+    class="relative bg-[url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto:best/Desktop_Accessories')] h-screen bg-center bg-cover">
+    <!-- Top Section -->
+    <div class="flex flex-col absolute top-20 left-[50%] translate-x-[-50%]">
+      <h1 class="text-[40px] m-auto font-bold">Gallery</h1>
+    </div>
+    <!-- Bottom Section -->
+    <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex flex-col md:flex-row md:space-x-4">
+      <button class="uppercase bg-gray-800 w-96 h-10 text-white rounded-full md:w-60">
+        Shop Now
+      </button>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div
+    class="relative bg-[url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto:best/Desktop_Accessories')] h-screen bg-center bg-cover">
+    <!-- Top Section -->
+    <div class="flex flex-col absolute top-20 left-[50%] translate-x-[-50%]">
+      <h1 class="text-[40px] m-auto font-bold">Contact</h1>
+    </div>
+    <!-- Bottom Section -->
+    <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex flex-col md:flex-row md:space-x-4">
+      <button class="uppercase bg-gray-800 w-96 h-10 text-white rounded-full md:w-60">
+        Shop Now
+      </button>
+    </div>
+  </div>
+
+  <footer class="flex pb-10 justify-center">
+    <ul class="flex flex-col md:flex-row md:space-x-4 items-center text-[12px] text-gray-500">
+      <li class="link">Barcamp Songkhla @2024</li>
+      <li class="link">About</li>
+      <li class="link">Gallery</li>
+      <li class="link">Contact</li>
+      <li class="link hidden md:inline">Map</li>
+    </ul>
+  </footer>
+</body>
+
 </html>

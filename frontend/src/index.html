@@ -56,6 +56,92 @@
       bottom: 50px;
       position: absolute;
     }
+
+    /* gallery */
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+      position: relative;
+      width: 60%;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+      cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+      float: left;
+      width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+      opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
   </style>
 
 
@@ -263,36 +349,107 @@
   <!-- Page 5 -->
   <div class="relative  h-screen bg-center bg-cover" style="background-image: url(img/bg_nature.png)">
     <div class="pt-5 flex justify-between font-bold items-center">
-      <div class="ml-8 text-black" style="letter-spacing: 5px;">
+      <div class="ml-8 text-white" style="letter-spacing: 5px;">
         Barcamp Songkhla
       </div>
-      <div class="hidden lg:inline">
-        <ul class="flex space-x-2 text-sm">
-
-        </ul>
-      </div>
-      <div>
-        <ul class="flex space-x-4 mr-2 text-sm text-black md:hidden">
-          <!-- รายการที่แสดงทั้งหมด -->
-          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Home</li>
-          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">About</li>
-          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Gallery</li>
-          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Contact</li>
-        </ul>
-
-      </div>
 
     </div>
 
-    <div class=" flex flex-col" style="padding-top: 2%; gap: 10px;">
-      <div>
-        <h1 class="text-black flex items-center justify-center">
-          Gallery
-        </h1>
+    <div class="flex justify-center items-center flex-col">
+      <h1 class="text-white flex items-center justify-center pb-7">
+        Gallery
+      </h1>
 
+
+      <div class="container">
+        <div class="mySlides">
+          <div class="numbertext">1 / 6</div>
+          <img src="img/barcamp8.png" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 6</div>
+          <img src="img/bg_brown.png" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">3 / 6</div>
+          <img src="img/bg_nature.png" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">4 / 6</div>
+          <img src="img/bg_white.png" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">5 / 6</div>
+          <img src="img/cover.png" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">6 / 6</div>
+          <img src="img/icon.png" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="row">
+          <div class="column">
+            <img class="demo cursor" src="img/barcamp8.png" style="width:100%" onclick="currentSlide(1)">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="img/bg_brown.png" style="width:100%" onclick="currentSlide(2)">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="img/bg_nature.png" style="width:100%" onclick="currentSlide(3)">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="img/bg_white.png" style="width:100%" onclick="currentSlide(4)">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="img/cover.png" style="width:100%" onclick="currentSlide(5)">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="img/icon.png" style="width:100%" onclick="currentSlide(6)">
+          </div>
+        </div>
       </div>
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("demo");
+          let captionText = document.getElementById("caption");
+          if (n > slides.length) { slideIndex = 1 }
+          if (n < 1) { slideIndex = slides.length }
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex - 1].style.display = "block";
+          dots[slideIndex - 1].className += " active";
+          captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+      </script>
+
 
     </div>
+
   </div>
 
   <!-- Page 6 -->
@@ -300,21 +457,6 @@
     <div class="pt-5 flex justify-between font-bold items-center">
       <div class="ml-8 text-white" style="letter-spacing: 5px;">
         Barcamp Songkhla
-      </div>
-      <div class="hidden lg:inline">
-        <ul class="flex space-x-2 text-sm">
-
-        </ul>
-      </div>
-      <div>
-        <ul class="flex space-x-4 mr-2 text-sm text-white md:hidden">
-          <!-- รายการที่แสดงทั้งหมด -->
-          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Home</li>
-          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">About</li>
-          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Gallery</li>
-          <li class="cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Contact</li>
-        </ul>
-
       </div>
 
     </div>

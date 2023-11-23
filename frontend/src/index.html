@@ -153,7 +153,7 @@
 
 <body>
   <!-- Page 1 -->
-  <div class="relative  h-screen bg-center bg-cover" style="background-image: url(img/cover.png) ">
+  <div id="home" class="relative  h-screen bg-center bg-cover" style="background-image: url(img/cover.png) ">
     <div class="pt-5 flex justify-between items-center">
       <p class="p2 ml-8 text-white " style="letter-spacing: 5px;">
         BARCAMP SONGKHLA
@@ -166,10 +166,21 @@
       <div>
         <ul class="flex space-x-4 mr-2 text-base text-white font-bold">
           <!-- รายการที่แสดงทั้งหมด -->
-          <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Home</p>
-          <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">About</p>
-          <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Gallery</p>
-          <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Contact</p>
+          <li class="p2 cursor-pointer hover:bg-slate-300 hover:bg-opacity-25 hover:rounded-full py-1 px-3">
+            <a href="#home">
+              Home
+            </a>
+          </li>
+          <li class="p2 cursor-pointer hover:bg-slate-300 hover:bg-opacity-25 hover:rounded-full py-1 px-3">
+            <a href="#about">
+              About
+            </a>
+          </li>
+          <li class="p2 cursor-pointer hover:bg-slate-300 hover:bg-opacity-25 hover:rounded-full py-1 px-3">
+            <a href="#gallery">
+              Gallery
+            </a>
+          </li>
         </ul>
 
       </div>
@@ -224,7 +235,7 @@
   </div>
 
   <!-- Page 3 -->
-  <div class="relative  h-screen bg-center bg-cover" style="background-image: url(img/bg_brown.png)">
+  <div id="about" class="relative  h-screen bg-center bg-cover" style="background-image: url(img/bg_brown.png)">
     <h1 class="flex items-center justify-center"
       style="padding-top: 2%; padding-bottom: 1%; letter-spacing: -2px; color: #FDF6EA;">
       What is Barcamp?
@@ -288,7 +299,7 @@
   </div>
 
   <!-- Page 5 -->
-  <div class="relative  h-screen bg-center bg-cover" style="background-image: url(img/bg_nature.png)">
+  <div id="gallery" class="relative h-screen bg-center bg-cover" style="background-image: url(img/bg_nature.png)">
 
     <div class="flex justify-center items-center flex-col" style="padding-top: 2%; gap: 10px;">
       <h1 class="text-white flex items-center justify-center pb-7" style="letter-spacing: -2px;">

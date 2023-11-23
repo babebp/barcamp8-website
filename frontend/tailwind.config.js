@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        footer: '#504128',
+        brown: '#504128',
+        cream: '#fdf6ea'
       }
     },
   },

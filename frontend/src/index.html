@@ -152,40 +152,31 @@
 </head>
 
 <body>
-  <!-- Page 1 -->
-  <div class="relative  h-screen bg-center bg-cover" style="background-image: url(img/cover.png) ">
-    <div class="pt-5 flex justify-between items-center">
-      <p class="p2 ml-8 text-white " style="letter-spacing: 5px;">
-        BARCAMP SONGKHLA
-      </p>
-      <div class="hidden lg:inline">
-        <ul class="flex space-x-2 text-sm">
-        </ul>
-      </div>
-      <div>
-        <ul class="flex space-x-4 mr-2 text-base text-white font-bold">
-          <!-- รายการที่แสดงทั้งหมด -->
-          <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Home</p>
-          <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">About</p>
-          <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Gallery</p>
-          <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Contact</p>
-        </ul>
-
-      </div>
+  <div class="bg-transparent text-black fixed inset-x-0 top-0 z-10 py-2 flex justify-between items-center">
+    <p class="p2 ml-8" style="letter-spacing: 5px;">
+      BARCAMP SONGKHLA
+    </p>
+    <div class="hidden lg:inline">
+      <ul class="flex space-x-2 text-sm">
+      </ul>
     </div>
+    <div>
+      <ul class="flex space-x-4 mr-2 text-basefont-bold">
+        <!-- รายการที่แสดงทั้งหมด -->
+        <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Home</p>
+        <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">About</p>
+        <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Gallery</p>
+        <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Contact</p>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 1 -->
+  <div class=" relative  h-screen bg-center bg-cover" style="background-image: url(img/cover.png) ">
     <div class="flex justify-center items-center h-screen">
       <img src="img/logo.png" alt="รูปภาพ" />
     </div>
   </div>
-
-  <!-- Bouncing chevron -->
-  <div class="absolute bottom-3 left-[50%] translate-x-[-50%]">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
-      class="w-6 h-6 animate-bounce">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-    </svg>
-  </div>
-
   </div>
 
   <!--Page 2 -->
@@ -346,6 +337,7 @@
           </div>
         </div>
       </div>
+
       <script>
         let slideIndex = 1;
         showSlides(slideIndex);
@@ -380,7 +372,7 @@
   </div>
 
   <footer class="flex justify-center">
-    <div class="flex justify-between flex-col md:flex-row md:space-x-4 items-center text-[12px] text-white bg-footer w-full pr-20 h-30">
+    <div class="flex justify-between flex-col md:flex-row md:space-x-4 items-center text-[12px] text-white bg-brown w-full pr-20 h-30">
       <!-- LOGO + BARCAMP -->
       <div class="flex justify-center items-center">
         <img src="img/logo.png" alt="" class="object-cover h-[75px]">

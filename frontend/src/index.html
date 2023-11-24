@@ -17,6 +17,15 @@
       font-size: 20px;
     }
 
+    h3 {
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-size: 15px;
+    }
+
     .p2 {
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -88,9 +97,31 @@
     }
 
     /* Position the image container (needed to position the left and right arrows) */
-    .container {
+    .container_gallery {
       position: relative;
-      width: 40%;
+      width: 50%;
+      margin: auto;
+    }
+
+
+    @media (max-width: 1200px) {
+
+      .container_gallery {
+        width: 70%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .container_gallery {
+        width: 100%;
+      }
+    }
+
+    .container_gallery_mobile {
+      position: relative;
+      width: 100%;
+
+
     }
 
     /* Hide the images by default */
@@ -108,7 +139,7 @@
     .next {
       cursor: pointer;
       position: absolute;
-      top: 40%;
+      top: 50%;
       width: auto;
       padding: 16px;
       margin-top: -50px;
@@ -205,8 +236,8 @@
     <div class="flex justify-center items-center">
       <img src="img/logooo.png" alt="รูปภาพ"
         class="md:inline hidden min-w-[700px] max-w-[1300px] w-full absolute top-[20px]  left-[50%] translate-x-[-50%]" />
-      <img src="img/mobile_logo.png" alt="รูปภาพ"
-        class="md:hidden inline min-w-[800px] absolute top-[80px] left-[50%] translate-x-[-50%]" />
+      <img src="img/mobile_logo2.png" alt="รูปภาพ"
+        class="md:hidden inline min-w-[300px] absolute top-[80px] left-[50%] translate-x-[-50%]" />
     </div>
 
     <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%]">
@@ -224,24 +255,30 @@
       style="padding: 5%; gap: 10px;">
       <!-- Text -->
       <div class="mt-10">
-        <svg width="60px" height="60px" viewBox="0 0 12 12" enable-background="new 0 0 12 12" id="Слой_1" version="1.1"
+        <svg width="60px" height="50px" viewBox="0 0 12 12" enable-background="new 0 0 12 12" id="Слой_1" version="1.1"
           xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          class="bounce lg:mx-0 mx-auto">
+          class="bounce lg:mx-0 mx-auto ">
           <path
             d="M6,0C3.2385864,0,1,2.2385864,1,5s2.5,5,5,7c2.5-2,5-4.2385864,5-7S8.7614136,0,6,0z M6,7  C4.8954468,7,4,6.1045532,4,5s0.8954468-2,2-2s2,0.8954468,2,2S7.1045532,7,6,7z"
             fill="#FF8C00" />
         </svg>
         <div class="flex flex-col lg:text-left text-center whitespace-nowrap">
-          <h1 class="text-black">
+          <h1 class="text-black md:inline hidden">
             27 มกราคม 2567
           </h1>
-          <h2>
+          <h3 class="text-black md:hidden inline">
+            27 มกราคม 2567
+          </h3>
+          <h2 class="text-black md:inline hidden">
             ณ อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC)<br>มหาวิทยาลัยสงขลานครินทร์ ชั้น 8
           </h2>
+          <h4 class="text-black md:hidden inline">
+            ณ อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC)<br>มหาวิทยาลัยสงขลานครินทร์ ชั้น 8
+          </h4>
         </div>
       </div>
       <!-- Map -->
-      <div class="flex items-center justify-center lg:w-1/2 w-2/3">
+      <div class=" flex items-center justify-center lg:w-1/2 w-2/3">
         <iframe class=""
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0027836025733!2d100.49468046525142!3d7.008954019272643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d29f53320558d%3A0x44bc2a2c81175fd9!2z4Lio4Li54LiZ4Lii4LmM4Lia4Lij4Li04LiB4Liy4Lij4Lin4Li04LiK4Liy4LiB4Liy4LijIOC4oeC4q-C4suC4p-C4tOC4l-C4ouC4suC4peC4seC4ouC4quC4h-C4guC4peC4suC4meC4hOC4o-C4tOC4meC4l-C4o-C5jA!5e0!3m2!1sth!2sth!4v1669909066081!5m2!1sth!2sth"
           width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
@@ -252,41 +289,48 @@
 
   <!-- Page 3 -->
   <div id="about" class="relative h-screen bg-center bg-cover" style="background-image: url(img/bg_brown.png)">
-    <h1 class="flex items-center justify-center"
-      style="padding-top: 7%; padding-bottom: 1%; letter-spacing: -2px; color: #FDF6EA;">
-      What is Barcamp?
-    </h1>
-    <div style="padding-left: 5%; padding-right: 5%; gap: 10px;">
-      <div class="bg-cream h-full">
-        <div class="flex lg:flex-row flex-col items-center " style="padding: 5%; padding-bottom: 0%; gap: 50px;">
-          <div class="max-w-[500px] min-w-[300px]">
-            <img src="img/barcamp8.png" alt="รูปภาพ" align="right" />
+    <div class="">
+      <h1 class="text-center justify-center pt-20" style=" padding-bottom: 1%; letter-spacing: -2px; color: #FDF6EA;">
+        What is Barcamp?
+      </h1>
+      <h3 class="md:hidden flex items-center justify-center "
+        style="padding-top: 7%; padding-bottom: 1%; letter-spacing: -2px; color: #FDF6EA;">
+        What is Barcamp?
+      </h3>
+      <div style="padding-left: 5%; padding-right: 5%; gap: 10px;">
+        <div class="bg-cream h-full">
+          <div class="flex lg:flex-row flex-col items-center " style="padding: 5%; padding-bottom: 0%; gap: 50px;">
+            <div class="max-w-[500px] min-w-[300px] ">
+              <img src="img/barcamp8.png" alt="รูปภาพ" align="right" />
+            </div>
+            <div>
+              <h2 class="font-bold md:text-2xl text-xl lg:text-left text-center">
+                หลายคนอาจสงสัยว่า "บาร์แคมป์" คืออะไร?
+              </h2>
+              <h2 class="md:text-lg text-base lg:text-left text-center">
+                บาร์แคมป์ (Barcamp) มักถูกเรียกว่า "งานสัมมนานอกกรอบ"
+                (un-conference) โดยทั่วไปบาร์แคมป์เป็นการสนทนากันระหว่างผู้เข้าร่วมงานกันเองโดยหัวใจสำคัญของงาน คือ
+                การรวบรวมคนที่ชื่นชอบในเทคโนโลยีมาเจอกัน มีสถานที่ให้เสวนาแลกเปลี่ยนทัศนคติระหว่างกัน
+                ซึ่งจะทำให้ทุกคนสามารถแชร์ความรู้ได้อย่างเต็มที่
+              </h2>
+            </div>
           </div>
-          <div>
-            <h2 class="font-bold text-2xl lg:text-left text-center">
-              หลายคนอาจสงสัยว่า "บาร์แคมป์" คืออะไร?
+          <div class="flex justify-center items-center flex-col lg:pt-20 pt-10" style="padding-bottom: 4%;">
+            <h2 class="md:inline hidden">
+              ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
             </h2>
-            <h2 class="text-lg lg:text-left text-center">
-              บาร์แคมป์ (Barcamp) มักถูกเรียกว่า "งานสัมมนานอกกรอบ"
-              (un-conference) โดยทั่วไปบาร์แคมป์เป็นการสนทนากันระหว่างผู้เข้าร่วมงานกันเองโดยหัวใจสำคัญของงาน คือ
-              การรวบรวมคนที่ชื่นชอบในเทคโนโลยีมาเจอกัน มีสถานที่ให้เสวนาแลกเปลี่ยนทัศนคติระหว่างกัน
-              ซึ่งจะทำให้ทุกคนสามารถแชร์ความรู้ได้อย่างเต็มที่
-            </h2>
-          </div>
-        </div>
-        <div class="flex justify-center items-center flex-col lg:pt-20 pt-10" style="padding-bottom: 4%;">
-          <h2>
-            ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
-          </h2>
-          <button class="button" style="margin-top: 20px;">
-            <h2>
-              ลงทะเบียน
-            </h2>
-          </button>
+            <h4 class="md:hidden inline font-bold">
+              ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
+            </h4>
+            <button class="button" style="margin-top: 20px;">
+              <h2>
+                ลงทะเบียน
+              </h2>
+            </button>
 
+          </div>
         </div>
       </div>
-
 
     </div>
   </div>
@@ -317,13 +361,11 @@
   <!-- Page 5 -->
   <div id="gallery" class="relative  h-screen bg-center bg-cover" style="background-image: url(img/bg_nature.png)">
 
-    <div class="flex justify-center items-center flex-col" style="padding-top: 2%; gap: 10px;">
-      <h1 class="text-white flex items-center justify-center pb-7" style="letter-spacing: -2px;">
+    <div class="flex items-center pt-20 flex-col h-full">
+      <h1 class=" text-white flex items-center justify-center" style="letter-spacing: -2px;">
         Gallery
       </h1>
-
-
-      <div class="container">
+      <div class="container_gallery ">
         <div class="mySlides">
           <div class="numbertext">1 / 6</div>
           <img src="img/gallery1.jpg" style="width:100%">
@@ -419,7 +461,7 @@
       style="padding-top: 2%; padding-bottom: 1%; letter-spacing: -2px;">
       Sponsors
     </h1>
-    <div style="padding-left: 5%; padding-right: 5%; gap: 10px;">
+    <!-- <div style="padding-left: 5%; padding-right: 5%; gap: 10px;">
       <div class="bg-brown bg-opacity-75 mt-5">
         <div class="flex space-x-10 justify-center pt-10 px-5">
           <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
@@ -436,23 +478,41 @@
           <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <!-- Footer -->
   <footer class="flex justify-center">
     <div
-      class="flex justify-between flex-col md:flex-row md:space-x-4 items-center text-[12px] text-white bg-brown w-full pr-20 h-30">
+      class="flex md:justify-between justify-center flex-col md:flex-row md:space-x-4 items-center lg:text-[18px] text-[16px] text-white bg-brown w-full md:pl-10 md:pr-10 md:h-24 h-36">
       <!-- LOGO + BARCAMP -->
       <div class="flex justify-center items-center">
         <img src="img/logo.png" alt="" class="object-cover h-[75px]">
-        <div class="p2 uppercase" style="letter-spacing: 5px;">barcamp songkhla</div>
+        <div class="uppercase" style="letter-spacing: 3px;">barcamp songkhla</div>
       </div>
 
       <!-- Social Media -->
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-2">
+        <div class="flex items-center space-x-2">
+
+          <p>Follow Us</p>
+          <svg width="40px" height="40px" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+            stroke="#ffffff">
+
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+            <g id="SVGRepo_iconCarrier">
+              <g id="Interface / Line_Xl">
+                <path id="Vector" d="M12 21V3" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            </g>
+
+          </svg>
+        </div>
         <!-- Facebook -->
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center space-x-2">
           <!-- Facebook Logo -->
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48"
             class="w-10 h-10">
@@ -468,7 +528,7 @@
         </div>
 
         <!-- Instagram -->
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center space-x-2">
           <!-- Instagram Logo -->
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48"
             class="w-10 h-10">

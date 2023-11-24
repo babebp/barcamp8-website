@@ -52,7 +52,7 @@
       height: 50px;
     }
 
-    .button1 {
+    .homepage-button {
       background-color: #FF8C00;
       border: none;
       color: white;
@@ -65,7 +65,7 @@
       cursor: pointer;
       border-radius: 20px;
       width: 200px;
-      height: 50px;
+      height: 40px;
     }
 
     .content {
@@ -177,7 +177,7 @@
       </ul>
     </div>
     <div>
-      <ul class="flex space-x-4 mr-2 text-basefont-bold">
+      <ul class="md:flex hidden space-x-4 mr-2 text-basefont-bold">
         <!-- รายการที่แสดงทั้งหมด -->
         <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">Home</p>
         <p class="p2 cursor-pointer hover:bg-slate-300 hover:rounded-full py-1 px-3">About</p>
@@ -188,15 +188,15 @@
   </div>
 
   <!-- Page 1 -->
-  <div class=" relative  h-screen bg-center bg-cover" style="background-image: url(img/cover.png) ">
+  <div class=" relative  h-screen bg-center bg-cover" style="background-image: url(img/background.png) ">
     <!-- Logo -->
     <div class="flex justify-center items-center">
-      <img src="img/logo.png" alt="รูปภาพ" class="sm:inline hidden w-[1000px]"/>
-      <img src="img/mobile_logo.png" alt="รูปภาพ" class="sm:hidden inline"/>
+      <img src="img/logo.png" alt="รูปภาพ" class="sm:inline hidden min-w-[850px] max-w-[1000px] w-full absolute top-[20px] left-[50%] translate-x-[-50%]"/>
+      <img src="img/mobile_logo.png" alt="รูปภาพ" class="sm:hidden inline min-w-[800px] absolute top-[32px] left-[50%] translate-x-[-50%]"/>
     </div>
     
-    <div class="w-full flex justify-center">
-      <button class="button1">
+    <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%]">
+      <button class="homepage-button">
           ลงทะเบียน
       </button>
     </div>

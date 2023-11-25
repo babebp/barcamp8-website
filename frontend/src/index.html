@@ -103,7 +103,7 @@
       margin: auto;
     }
 
-
+    /* xl */
     @media (max-width: 1200px) {
 
       .container_gallery {
@@ -111,9 +111,15 @@
       }
     }
 
+    /* md */
     @media (max-width: 767px) {
       .container_gallery {
         width: 100%;
+      }
+
+      .button {
+        width: 180px;
+        height: 30px;
       }
     }
 
@@ -315,7 +321,8 @@
   <!-- Page 3 -->
   <div id="about" class="relative h-screen bg-center bg-cover bg-[#FAF6F6]">
     <div class="">
-      <h1 class="text-center justify-center pt-20 text-black" style=" padding-bottom: 1%; letter-spacing: -2px;">
+      <h1 class="md:flex hidden text-center justify-center  pt-20 text-black"
+        style=" padding-bottom: 1%; letter-spacing: -2px;">
         What is Barcamp?
       </h1>
       <h3 class="md:hidden flex items-center justify-center text-black"
@@ -324,7 +331,7 @@
       </h3>
       <div style="padding-left: 5%; padding-right: 5%; gap: 10px;">
         <div class="bg-light_yellow h-full">
-          <div class="flex lg:flex-row flex-col items-center " style="padding: 5%; padding-bottom: 0%; gap: 50px;">
+          <div class="flex lg:flex-row flex-col items-center " style="padding: 5%; gap: 30px;">
             <div class="max-w-[500px] min-w-[300px] ">
               <img src="img/barcamp8.png" alt="รูปภาพ" align="right" />
             </div>
@@ -340,17 +347,20 @@
               </h2>
             </div>
           </div>
-          <div class="flex justify-center items-center flex-col lg:pt-20 pt-10" style="padding-bottom: 4%;">
+          <div class="flex justify-center items-center flex-col lg:pt-20 pt-5" style="padding-bottom: 4%;">
             <h2 class="md:inline hidden">
               ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
             </h2>
             <h4 class="md:hidden inline font-bold">
               ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
             </h4>
-            <button class="button font-bold" style="margin-top: 20px;">
-              <h2>
+            <button class="button font-bold" style="margin-top: 10px;">
+              <h2 class="md:inline hidden">
                 ลงทะเบียน
               </h2>
+              <h4 class="md:hidden inline">
+                ลงทะเบียน
+              </h4>
             </button>
 
           </div>

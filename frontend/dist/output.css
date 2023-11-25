@@ -620,6 +620,7 @@ video {
   top: 50px;
 }
 
+
 .top-\[30px\] {
   top: 30px;
 }
@@ -1112,6 +1113,10 @@ video {
 
   .sm\:top-\[12px\] {
     top: 12px;
+  }
+
+  .sm\:top-\[1px\] {
+    top: 1px;
   }
 
   .sm\:mb-0 {

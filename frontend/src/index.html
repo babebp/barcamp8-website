@@ -47,9 +47,9 @@
     }
 
     .button {
-      background-color: #FF8C00;
+      background-color: #FAF6F6;
       border: none;
-      color: white;
+      color: black;
       padding: 3px;
       text-align: center;
       text-decoration: none;
@@ -74,8 +74,8 @@
       margin: 4px 2px;
       cursor: pointer;
       border-radius: 20px;
-      width: 200px;
-      height: 40px;
+      width: 230px;
+      height: 50px;
     }
 
     .content {
@@ -194,13 +194,36 @@
     .demo:hover {
       opacity: 1;
     }
+
+    #home {
+      position: relative;
+      height: 100vh;
+      /* ให้ความสูงเท่ากับ viewport height */
+      background-position: center;
+      background-size: cover;
+      background-color: #FAF6F6;
+    }
+
+    #home .h-full {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #home img {
+      position: absolute;
+      top: 45%;
+      transform: translate(-50%, -50%);
+    }
   </style>
 
 
 </head>
 
 <body>
-  <div class="bg-transparent text-black fixed inset-x-0 top-0 z-10 py-2 flex justify-between items-center">
+
+  <div class="bg-yellow text-white fixed inset-x-0 top-0 z-10 py-2 flex justify-between items-center">
     <p class="p2 ml-8" style="letter-spacing: 5px;">
       BARCAMP SONGKHLA
     </p>
@@ -229,27 +252,29 @@
       </ul>
     </div>
   </div>
-
   <!-- Page 1 -->
-  <div id="home" class=" relative  h-screen bg-center bg-cover" style="background-image: url(img/background.png) ">
-    <!-- Logo -->
-    <div class="flex justify-center items-center">
-      <img src="img/logooo.png" alt="รูปภาพ"
-        class="md:inline hidden min-w-[700px] max-w-[1300px] w-full absolute top-[20px]  left-[50%] translate-x-[-50%]" />
-      <img src="img/mobile_logo2.png" alt="รูปภาพ"
-        class="md:hidden inline min-w-[300px] absolute top-[80px] left-[50%] translate-x-[-50%]" />
-    </div>
+  <div id="home" class=" relative  h-screen  bg-center bg-cover  bg-[#FAF6F6]">
+    <div class="h-full ">
 
-    <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%]">
-      <button class="homepage-button">
-        ลงทะเบียน
-      </button>
+      <!-- Logo -->
+      <div class="flex justify-center items-center">
+        <img src="img/logooo.png" alt="รูปภาพ"
+          class="md:inline hidden min-w-[700px] max-w-[1300px] w-full absolute top-[20px]  left-[50%] translate-x-[-50%]" />
+        <img src="img/mobile_logo2.png" alt="รูปภาพ"
+          class="md:hidden inline min-w-[300px] absolute top-[80px] left-[50%] translate-x-[-50%]" />
+      </div>
+
+      <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%]">
+        <button class="homepage-button font-bold">
+          ลงทะเบียน
+        </button>
+      </div>
     </div>
   </div>
   </div>
 
   <!--Page 2 -->
-  <div class="relative  h-screen bg-center bg-cover" style="background-image: url(img/bg_white.png)">
+  <div class="relative  h-screen bg-center bg-cover bg-[#FAF6F6]">
 
     <div class="flex lg:flex-row flex-col items-center w-full h-screen lg:justify-between space-y-11"
       style="padding: 5%; gap: 10px;">
@@ -288,17 +313,17 @@
   </div>
 
   <!-- Page 3 -->
-  <div id="about" class="relative h-screen bg-center bg-cover" style="background-image: url(img/bg_brown.png)">
+  <div id="about" class="relative h-screen bg-center bg-cover bg-[#FAF6F6]">
     <div class="">
-      <h1 class="text-center justify-center pt-20" style=" padding-bottom: 1%; letter-spacing: -2px; color: #FDF6EA;">
+      <h1 class="text-center justify-center pt-20 text-black" style=" padding-bottom: 1%; letter-spacing: -2px;">
         What is Barcamp?
       </h1>
-      <h3 class="md:hidden flex items-center justify-center "
-        style="padding-top: 7%; padding-bottom: 1%; letter-spacing: -2px; color: #FDF6EA;">
+      <h3 class="md:hidden flex items-center justify-center text-black"
+        style="padding-top: 7%; padding-bottom: 1%; letter-spacing: -2px;">
         What is Barcamp?
       </h3>
       <div style="padding-left: 5%; padding-right: 5%; gap: 10px;">
-        <div class="bg-cream h-full">
+        <div class="bg-light_yellow h-full">
           <div class="flex lg:flex-row flex-col items-center " style="padding: 5%; padding-bottom: 0%; gap: 50px;">
             <div class="max-w-[500px] min-w-[300px] ">
               <img src="img/barcamp8.png" alt="รูปภาพ" align="right" />
@@ -322,7 +347,7 @@
             <h4 class="md:hidden inline font-bold">
               ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
             </h4>
-            <button class="button" style="margin-top: 20px;">
+            <button class="button font-bold" style="margin-top: 20px;">
               <h2>
                 ลงทะเบียน
               </h2>
@@ -335,7 +360,7 @@
     </div>
   </div>
   <!-- Page 4 -->
-  <div class="relative  h-screen bg-center bg-cover" style="background-image: url(img/bg_white.png)">
+  <div class="relative  h-screen bg-center bg-cover bg-[#FAF6F6]">
     <div class=" flex flex-col" style="padding-top: 2%; gap: 10px;">
       <div>
         <h1 class="text-black flex items-center justify-center" style="letter-spacing: -2px;">
@@ -359,10 +384,10 @@
   </div>
 
   <!-- Page 5 -->
-  <div id="gallery" class="relative  h-screen bg-center bg-cover" style="background-image: url(img/bg_nature.png)">
+  <div id="gallery" class="relative  h-screen bg-center bg-cover bg-[#FAF6F6]">
 
     <div class="flex items-center pt-20 flex-col h-full">
-      <h1 class=" text-white flex items-center justify-center" style="letter-spacing: -2px;">
+      <h1 class=" text-black flex items-center justify-center" style="letter-spacing: -2px;">
         Gallery
       </h1>
       <div class="container_gallery ">
@@ -461,24 +486,39 @@
       style="padding-top: 2%; padding-bottom: 1%; letter-spacing: -2px;">
       Sponsors
     </h1>
-    <!-- <div style="padding-left: 5%; padding-right: 5%; gap: 10px;">
-      <div class="bg-brown bg-opacity-75 mt-5">
-        <div class="flex space-x-10 justify-center pt-10 px-5">
-          <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
-          <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
-          <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
-          <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
-          <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
+    <div class="" style="padding-left: 5%; padding-right: 5%; gap: 10px;">
+      <div class="bg-opacity-75 mt-5 max-h-5/6">
+        <div class="grid xl:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-4">
+          <img src="img/sponsor_nexthop.png" alt=""
+            class="md:max-w-[160px] md:min-w-[90px] max-w-[100px] min-w-[20px] min-h-[20px]">
+          <img src="img/sponsor_nexthop.png" alt=""
+            class="md:max-w-[160px] md:min-w-[90px] max-w-[100px] min-w-[20px] min-h-[20px] ">
+          <img src="img/sponsor_nexthop.png" alt=""
+            class="md:max-w-[160px] md:min-w-[90px] max-w-[100px] min-w-[20px] min-h-[20px]">
+          <img src="img/sponsor_nexthop.png" alt=""
+            class="md:max-w-[160px] md:min-w-[90px] max-w-[100px] min-w-[20px] min-h-[20px]">
+          <img src="img/sponsor_nexthop.png" alt=""
+            class="md:max-w-[160px] md:min-w-[90px] max-w-[100px] min-w-[20px] min-h-[20px]">
+          <img src="img/sponsor_nexthop.png" alt=""
+            class="md:max-w-[160px] md:min-w-[90px] max-w-[100px] min-w-[20px] min-h-[20px]">
+          <img src="img/sponsor_nexthop.png" alt=""
+            class="md:max-w-[160px] md:min-w-[90px] max-w-[100px] min-w-[20px] min-h-[20px] ">
+          <img src="img/sponsor_nexthop.png" alt=""
+            class="md:max-w-[160px] md:min-w-[90px] max-w-[100px] min-w-[20px] min-h-[20px]">
+          <img src="img/sponsor_nexthop.png" alt=""
+            class="md:max-w-[160px] md:min-w-[90px] max-w-[100px] min-w-[20px] min-h-[20px]">
+          <img src="img/sponsor_nexthop.png" alt=""
+            class="md:max-w-[160px] md:min-w-[90px] max-w-[100px] min-w-[20px] min-h-[20px]">
         </div>
-        <div class="flex space-x-10 justify-center py-10 px-5">
+        <!-- <div class="flex space-x-10 justify-center py-10 px-5">
           <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
           <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
           <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
           <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
           <img src="img/sponsor_nexthop.png" alt="" class="max-w-[160px] min-w-[90px]">
-        </div>
+        </div> -->
       </div>
-    </div> -->
+    </div>
   </div>
 
   <!-- Footer -->

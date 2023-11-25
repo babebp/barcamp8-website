@@ -821,6 +821,18 @@ video {
   margin-bottom: calc(2.75rem * var(--tw-space-y-reverse));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1257,4 +1269,8 @@ video {
   .lg\:text-\[18px\] {
     font-size: 18px;
   }
+}
+
+.\[\&\:\:-webkit-scrollbar\]\:hidden::-webkit-scrollbar {
+  display: none;
 }

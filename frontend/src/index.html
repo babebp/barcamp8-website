@@ -246,41 +246,88 @@
       .scroller section {
         scroll-snap-align: start;
       }
+
+      .menu {
+        transition: transform 0.3s ease-in-out;
+      }
+
     </style>
   </head>
 
-  <body>
-    <div
-      class="bg-yellow text-white fixed inset-x-0 top-0 z-10 py-2 flex justify-between items-center"
-    >
-      <p class="p2 ml-8 select-none" style="letter-spacing: 5px">BARCAMP SONGKHLA</p>
-      <div class="hidden lg:inline">
-        <ul class="flex space-x-2 text-sm"></ul>
+  <!-- Navbar -->
+  <nav class="bg-yellow py-2 px-4 fixed top-0 w-full z-40">
+    <div class="container flex justify-between items-center">
+      <div class="text-white font-bold uppercase">
+        <a href="#">barcamp songkhla</a>
       </div>
-      <div>
-        <ul class="md:flex hidden space-x-4 mr-2 text-basefont-bold select-none">
-          <!-- รายการที่แสดงทั้งหมด -->
-          <a
-            class="p2 cursor-pointer hover:bg-slate-300 hover:bg-opacity-25 hover:rounded-full py-1 px-3"
-            href="#home"
+      <div class="hidden md:flex space-x-4">
+        <a href="#home" class="text-white">Home</a>
+        <a href="#about" class="text-white">About</a>
+        <a href="#gallery" class="text-white">Gallery</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Home
-          </a>
-          <a
-            class="p2 cursor-pointer hover:bg-slate-300 hover:bg-opacity-25 hover:rounded-full py-1 px-3"
-            href="#about"
-          >
-            About
-          </a>
-          <a
-            class="p2 cursor-pointer hover:bg-slate-300 hover:bg-opacity-25 hover:rounded-full py-1 px-3"
-            href="#gallery"
-          >
-            Gallery
-          </a>
-        </ul>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
       </div>
     </div>
+  </nav>
+
+  <div
+    id="mobile-menu"
+    class="bg-gray-800 fixed top-0 right-0 h-full w-0 overflow-hidden z-50"
+  >
+    <div class="container mx-auto flex flex-col items-center p-4">
+      <button id="menu-close" class="text-white focus:outline-none">
+        <svg
+          class="w-6 h-6 flex items-end"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+      <a href="#home" class="text-white py-2">Home</a>
+      <a href="#about" class="text-white py-2">About</a>
+      <a href="#gallery" class="text-white py-2">Gallery</a>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuClose = document.getElementById("menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.style.width = "100%";
+    });
+
+    menuClose.addEventListener("click", () => {
+      mobileMenu.style.width = "0";
+    });
+  </script>
+
+  <body>
     <article class="scroller">
       <!-- Page 1 -->
       <section
@@ -366,7 +413,7 @@
       </section>
 
       <!-- Page 3 -->
-      <section id="about" class="relative h-screen bg-center bg-cover bg-white">
+      <section id="about" class="relative h-screen bg-center bg-cover bg-white overflow-scroll [&::-webkit-scrollbar]:hidden">
         <div class="">
           <h1
             class="md:flex hidden text-center justify-center pt-20 text-black"
@@ -427,7 +474,7 @@
         </div>
       </section>
       <!-- Page 4 -->
-      <section class="relative h-screen bg-center bg-cover bg-white">
+      <section class="relative h-screen bg-center bg-cover bg-white overflow-scroll [&::-webkit-scrollbar]:hidden">
         <div
           class="w-full pl-10 pr-10 absolute sm:top-[12px] top-[10px] left-[50%] translate-x-[-50%]"
         >
@@ -739,6 +786,10 @@
       </section>
       <!-- Page 6 -->
       <section class="relative bg-white h-screen w-full pt-20">
+        <!-- Label -->
+        <h1 class="flex justify-center items-center w-full">
+          Sponsors
+        </h1>
         <!-- Desktop Sponsor -->
         <div
           class="md:flex hidden flex-col w-full justify-center items-center h-full space-y-10 px-10"

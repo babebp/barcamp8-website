@@ -718,6 +718,10 @@ video {
   height: 18px;
 }
 
+.h-\[24px\] {
+  height: 24px;
+}
+
 .w-10 {
   width: 2.5rem;
 }

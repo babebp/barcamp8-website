@@ -1,1077 +1,850 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Barcamp 8</title>
-    <link rel="stylesheet" href="../dist/output.css" />
-    <link rel="icon" href="img/icon-web.png" type="image/png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Noto Sans Thai"
-      rel="stylesheet"
-    />
-    <style>
-      h1 {
-        font-family: "Noto Sans Thai";
-        font-size: 50px;
-        font-weight: bolder;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barcamp 8</title>
+  <link rel="stylesheet" href="../dist/output.css" />
+  <link rel="icon" href="img/icon-web.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Noto Sans Thai" rel="stylesheet" />
+  <style>
+    h1 {
+      font-family: "Noto Sans Thai";
+      font-size: 50px;
+      font-weight: bolder;
+    }
+
+    h2 {
+      font-family: "Noto Sans Thai";
+      font-size: 20px;
+    }
+
+    h3 {
+      font-family: "Noto Sans Thai";
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-family: "Noto Sans Thai";
+      font-size: 15px;
+    }
+
+    h5 {
+      font-family: "Noto Sans Thai";
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    h6 {
+      font-family: "Noto Sans Thai";
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+
+    .p2 {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
       }
 
-      h2 {
-        font-family: "Noto Sans Thai";
-        font-size: 20px;
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0);
       }
 
-      h3 {
-        font-family: "Noto Sans Thai";
-        font-size: 35px;
-        font-weight: bold;
+      25%,
+      75% {
+        transform: translateX(-3px);
       }
 
-      h4 {
-        font-family: "Noto Sans Thai";
-        font-size: 15px;
+      50% {
+        transform: translateX(3px);
       }
+    }
 
-      .p2 {
-        font-family: Arial, Helvetica, sans-serif;
-      }
+    .shaking-svg {
+      animation: shake 1s ease-in-out 2;
+      /* 2 rounds */
+    }
 
-      @keyframes bounce {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
+    .bounce {
+      animation: bounce 1s infinite;
+    }
 
-        50% {
-          transform: translateY(-10px);
-        }
-      }
+    .button {
+      background-color: #faf6f6;
+      border: none;
+      color: black;
+      padding: 3px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 20px;
+      width: 300px;
+      height: 50px;
+    }
 
-      .bounce {
-        animation: bounce 1s infinite;
-      }
+    .homepage-button {
+      background-color: #ff8c00;
+      border: none;
+      color: white;
+      padding: 3px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 20px;
+      width: 230px;
+      height: 50px;
+    }
 
-      .button {
-        background-color: #faf6f6;
-        border: none;
-        color: black;
-        padding: 3px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 20px;
-        width: 300px;
-        height: 50px;
-      }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      bottom: 50px;
+      position: absolute;
+    }
 
-      .homepage-button {
-        background-color: #ff8c00;
-        border: none;
-        color: white;
-        padding: 3px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 20px;
-        width: 230px;
-        height: 50px;
-      }
+    /* gallery */
+    * {
+      box-sizing: border-box;
+    }
 
-      .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        bottom: 50px;
-        position: absolute;
-      }
+    img {
+      vertical-align: middle;
+    }
 
-      /* gallery */
-      * {
-        box-sizing: border-box;
-      }
+    /* Position the image container (needed to position the left and right arrows) */
+    .container_gallery {
+      position: relative;
+      width: 50%;
+      margin: auto;
+    }
 
-      img {
-        vertical-align: middle;
-      }
-
-      /* Position the image container (needed to position the left and right arrows) */
+    /* xl */
+    @media (max-width: 1200px) {
       .container_gallery {
-        position: relative;
-        width: 50%;
-        margin: auto;
+        width: 70%;
       }
+    }
 
-      /* xl */
-      @media (max-width: 1200px) {
-        .container_gallery {
-          width: 70%;
-        }
-      }
-
-      /* md */
-      @media (max-width: 767px) {
-        .container_gallery {
-          width: 100%;
-        }
-
-        .button {
-          width: 180px;
-          height: 30px;
-        }
-      }
-
-      .container_gallery_mobile {
-        position: relative;
+    /* md */
+    @media (max-width: 767px) {
+      .container_gallery {
         width: 100%;
       }
 
-      /* Hide the images by default */
-      .mySlides {
-        display: none;
+      .button {
+        width: 180px;
+        height: 30px;
       }
+    }
 
-      /* Add a pointer when hovering over the thumbnail images */
-      .cursor {
-        cursor: pointer;
-      }
+    .container_gallery_mobile {
+      position: relative;
+      width: 100%;
+    }
 
-      /* Next & previous buttons */
-      .prev,
-      .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -50px;
-        color: white;
-        font-weight: bold;
-        font-size: 20px;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-        -webkit-user-select: none;
-      }
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
 
-      /* Position the "next button" to the right */
-      .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+      cursor: pointer;
+    }
 
-      /* On hover, add a black background color with a little bit see-through */
-      .prev:hover,
-      .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
 
-      /* Number text (1/3 etc) */
-      .numbertext {
-        color: #f2f2f2;
-        font-size: 12px;
-        padding: 8px 12px;
-        position: absolute;
-        top: 0;
-      }
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
 
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
 
-      /* Six columns side by side */
-      .column {
-        float: left;
-        width: 16.66%;
-      }
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
 
-      /* Add a transparency effect for thumnbail images */
-      .demo {
-        opacity: 0.6;
-      }
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-      .active,
-      .demo:hover {
-        opacity: 1;
-      }
+    /* Six columns side by side */
+    .column {
+      float: left;
+      width: 16.66%;
+    }
 
-      #home {
-        position: relative;
-        height: 100vh;
-        /* ให้ความสูงเท่ากับ viewport height */
-        background-position: center;
-        background-size: cover;
-        background-color: #faf6f6;
-      }
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+      opacity: 0.6;
+    }
 
-      #home .h-full {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
 
-      #home img {
-        position: absolute;
-        top: 45%;
-        transform: translate(-50%, -50%);
-      }
+    #home {
+      position: relative;
+      height: 100vh;
+      /* ให้ความสูงเท่ากับ viewport height */
+      background-position: center;
+      background-size: cover;
+      background-color: #faf6f6;
+    }
 
-      .column_sponsor {
-        float: left;
-        width: 80%;
-        padding: 5px;
-      }
+    #home .h-full {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-      .row_sponsor::after {
-        content: "";
-        clear: both;
-        display: table;
-      }
+    #home img {
+      position: absolute;
+      top: 45%;
+      transform: translate(-50%, -50%);
+    }
 
-      .scroller {
-        height: 100vh;
-        overflow-y: scroll;
-        scroll-snap-type: y mandatory;
-      }
+    .column_sponsor {
+      float: left;
+      width: 80%;
+      padding: 5px;
+    }
 
-      .scroller section {
-        scroll-snap-align: start;
-      }
+    .row_sponsor::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
 
-      .menu {
-        transition: transform 0.3s ease-in-out;
-      }
-    </style>
-  </head>
+    .scroller {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
 
-  <!-- Navbar -->
-  <nav class="bg-yellow py-3 md:px-20 px-10 fixed top-0 w-full z-40">
-    <div class="flex justify-between items-center w-full">
-      <div class="text-white font-bold uppercase">
-        <a href="#">barcamp songkhla</a>
-      </div>
-      <div class="hidden md:flex space-x-7 font-bold">
-        <a href="#home" class="text-white">Home</a>
-        <a href="#about" class="text-white">About</a>
-        <a href="#gallery" class="text-white">Gallery</a>
-      </div>
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-white focus:outline-none">
-          <svg
-            class="w-[18px] h-[18px]"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
-      </div>
+    .scroller section {
+      scroll-snap-align: start;
+    }
+
+    .menu {
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<!-- Navbar -->
+<nav class="bg-yellow py-3 md:px-20 px-10 fixed top-0 w-full z-40">
+  <div class="flex justify-between items-center w-full">
+    <div class="uppercase text-white" style="letter-spacing: 3px">
+      <a href="#">barcamp songkhla</a>
     </div>
-  </nav>
-
-  <div
-    id="mobile-menu"
-    class="bg-gray-800 fixed top-0 right-0 h-full w-0 overflow-hidden z-50"
-  >
-    <div class="w-full flex justify-end">
-      <button id="menu-close" class="text-white focus:outline-none pr-9 pt-3">
-        <svg
-          class="w-6 h-6 flex items-end"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
+    <div class="hidden md:flex space-x-7 font-bold">
+      <a href="#home" class="text-white">Home</a>
+      <a href="#about" class="text-white">About</a>
+      <a href="#gallery" class="text-white">Gallery</a>
+    </div>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-white focus:outline-none">
+        <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
     </div>
-    <div class="relative mx-auto flex flex-col p-4 items-center space-y-[50px] mt-10">
-      <a href="#home" class="text-white py-2">Home</a>
-      <a href="#about" class="text-white py-2">About</a>
-      <a href="#gallery" class="text-white py-2">Gallery</a>
-    </div>
   </div>
+</nav>
 
-  <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const menuClose = document.getElementById("menu-close");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+<div id="mobile-menu" class="bg-gray-800 fixed top-0 right-0 h-full w-0 overflow-hidden z-50">
+  <div class="w-full flex justify-end">
+    <button id="menu-close" class="text-white focus:outline-none pr-9 pt-3">
+      <svg class="w-6 h-6 flex items-end" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="relative mx-auto flex flex-col p-4 items-center space-y-[50px] mt-10">
+    <a href="#home" class="text-white py-2">Home</a>
+    <a href="#about" class="text-white py-2">About</a>
+    <a href="#gallery" class="text-white py-2">Gallery</a>
+  </div>
+</div>
 
-    function closeMobileMenu() {
-        mobileMenu.style.width = "0";
-    }
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuClose = document.getElementById("menu-close");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
 
-    menuToggle.addEventListener("click", () => {
-        mobileMenu.style.width = "100%";
-    });
+  function closeMobileMenu() {
+    mobileMenu.style.width = "0";
+  }
 
-    menuClose.addEventListener("click", closeMobileMenu);
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.style.width = "100%";
+  });
 
-    // Close the mobile menu when a submenu item is clicked
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener("click", closeMobileMenu);
-    });
+  menuClose.addEventListener("click", closeMobileMenu);
+
+  // Close the mobile menu when a submenu item is clicked
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener("click", closeMobileMenu);
+  });
 </script>
 
 
-  <body>
-    <article class="scroller">
-      <!-- Page 1 -->
-      <section
-        id="home"
-        class="relative h-screen bg-center bg-cover"
-        style="background-image: url('img/background.png')"
-      >
-        <div class="h-full">
-          <!-- Logo -->
-          <div class="flex justify-center items-center">
-            <img
-              src="img/logooo.png"
-              alt="รูปภาพ"
-              class="md:inline hidden min-w-[700px] max-w-[1300px] w-full absolute top-[20px] left-[50%] translate-x-[-50%]"
-            />
-            <img
-              src="img/mobile_logo2.png"
-              alt="รูปภาพ"
-              class="md:hidden inline min-w-[300px] absolute top-[80px] left-[50%] translate-x-[-50%]"
-            />
-          </div>
+<body>
+  <article class="scroller">
+    <!-- Page 1 -->
+    <section id="home" class="relative h-screen bg-center bg-cover" style="background-image: url('img/background.png')">
+      <div class="h-full">
+        <!-- Logo -->
+        <div class="flex justify-center items-center">
+          <img src="img/logooo.png" alt="รูปภาพ"
+            class="md:inline hidden min-w-[700px] max-w-[1300px] w-full absolute top-[20px] left-[50%] translate-x-[-50%]" />
+          <img src="img/mobile_logo2.png" alt="รูปภาพ"
+            class="md:hidden inline min-w-[300px] absolute top-[80px] left-[50%] translate-x-[-50%]" />
+        </div>
 
-          <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%]">
-            <button class="homepage-button font-bold">ลงทะเบียน</button>
+        <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%]">
+          <button class="homepage-button font-bold">ลงทะเบียน</button>
+        </div>
+      </div>
+    </section>
+
+    <!--Page 2 -->
+    <section class="relative h-screen bg-center bg-cover bg-white">
+      <div class="flex flex-row justify-center items-center">
+        <h1 class="md:flex hidden text-center justify-center pt-20 text-black"
+          style="padding-bottom: 1%; letter-spacing: -2px">
+          Barc
+        </h1>
+        <h3 class="md:hidden flex  items-center justify-center pt-20 text-black"
+          style="padding-bottom: 1%; letter-spacing: -2px">
+          Barc
+        </h3>
+        <div class="pt-16 pl-1 ">
+          <svg class="shaking-svg" width="40px" height="40px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji"
+            preserveAspectRatio="xMidYMid meet">
+            <path fill="#FFCC4D"
+              d="M20 6.042c0 1.112-.903 2.014-2 2.014s-2-.902-2-2.014V2.014C16 .901 16.903 0 18 0s2 .901 2 2.014v4.028z">
+            </path>
+            <path fill="#FFAC33"
+              d="M9.18 36c-.224 0-.452-.052-.666-.159a1.521 1.521 0 0 1-.667-2.027l8.94-18.127c.252-.512.768-.835 1.333-.835s1.081.323 1.333.835l8.941 18.127a1.52 1.52 0 0 1-.666 2.027a1.482 1.482 0 0 1-1.999-.676L18.121 19.74l-7.607 15.425A1.49 1.49 0 0 1 9.18 36z">
+            </path>
+            <path fill="#58595B"
+              d="M18.121 20.392a.985.985 0 0 1-.702-.295L3.512 5.998c-.388-.394-.388-1.031 0-1.424s1.017-.393 1.404 0L18.121 17.96L31.324 4.573a.985.985 0 0 1 1.405 0a1.017 1.017 0 0 1 0 1.424l-13.905 14.1a.992.992 0 0 1-.703.295z">
+            </path>
+            <path fill="#DD2E44"
+              d="M34.015 19.385c0 8.898-7.115 16.111-15.894 16.111c-8.777 0-15.893-7.213-15.893-16.111c0-8.9 7.116-16.113 15.893-16.113c8.778-.001 15.894 7.213 15.894 16.113z">
+            </path>
+            <path fill="#E6E7E8"
+              d="M30.041 19.385c0 6.674-5.335 12.084-11.92 12.084c-6.583 0-11.919-5.41-11.919-12.084C6.202 12.71 11.538 7.3 18.121 7.3c6.585-.001 11.92 5.41 11.92 12.085z">
+            </path>
+            <path fill="#FFCC4D"
+              d="M30.04 1.257a5.899 5.899 0 0 0-4.214 1.77l8.429 8.544A6.064 6.064 0 0 0 36 7.299c0-3.336-2.669-6.042-5.96-6.042zm-24.08 0a5.9 5.9 0 0 1 4.214 1.77l-8.429 8.544A6.064 6.064 0 0 1 0 7.299c0-3.336 2.668-6.042 5.96-6.042z">
+            </path>
+            <path fill="#414042" d="M23 20h-5a1 1 0 0 1-1-1v-9a1 1 0 0 1 2 0v8h4a1 1 0 1 1 0 2z"></path>
+          </svg>
+        </div>
+        <h1 class="md:flex hidden text-center justify-center pt-20 text-black"
+          style="padding-bottom: 1%; letter-spacing: -2px">
+          mp Event
+        </h1>
+        <h3 class="md:hidden flex  items-center justify-center pt-20 text-black"
+          style="padding-bottom: 1%; letter-spacing: -2px">
+          mp Event
+        </h3>
+      </div>
+      <div class="flex lg:flex-row flex-col items-center w-full lg:justify-between space-y-11"
+        style="padding: 5%; gap: 10px">
+        <!-- Text -->
+        <div class="   xl:pl-10">
+          <svg width="60px" height="50px" viewBox="0 0 12 12" enable-background="new 0 0 12 12" id="Слой_1"
+            version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" class="bounce lg:mx-0 mx-auto">
+            <path
+              d="M6,0C3.2385864,0,1,2.2385864,1,5s2.5,5,5,7c2.5-2,5-4.2385864,5-7S8.7614136,0,6,0z M6,7  C4.8954468,7,4,6.1045532,4,5s0.8954468-2,2-2s2,0.8954468,2,2S7.1045532,7,6,7z"
+              fill="#FF8C00" />
+          </svg>
+          <div class="flex flex-col lg:text-left text-center whitespace-nowrap">
+            <h5 class="text-black md:inline hidden">27 มกราคม 2567</h5>
+            <h6 class="text-black md:hidden inline">27 มกราคม 2567</h6>
+            <h2 class="text-black md:inline hidden">
+              ณ อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC)<br />มหาวิทยาลัยสงขลานครินทร์
+              ชั้น 8
+            </h2>
+            <h4 class="text-black md:hidden inline">
+              ณ อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC)<br />มหาวิทยาลัยสงขลานครินทร์
+              ชั้น 8
+            </h4>
           </div>
         </div>
-      </section>
+        <!-- Map -->
+        <div class="flex items-center justify-center lg:w-1/2 w-2/3">
+          <iframe class=""
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0027836025733!2d100.49468046525142!3d7.008954019272643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d29f53320558d%3A0x44bc2a2c81175fd9!2z4Lio4Li54LiZ4Lii4LmM4Lia4Lij4Li04LiB4Liy4Lij4Lin4Li04LiK4Liy4LiB4Liy4LijIOC4oeC4q-C4suC4p-C4tOC4l-C4ouC4suC4peC4seC4ouC4quC4h-C4guC4peC4suC4meC4hOC4o-C4tOC4meC4l-C4o-C5jA!5e0!3m2!1sth!2sth!4v1669909066081!5m2!1sth!2sth"
+            width="600" height="400" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
 
-      <!--Page 2 -->
-      <section class="relative h-screen bg-center bg-cover bg-white">
-        <div
-          class="flex lg:flex-row flex-col items-center w-full h-screen lg:justify-between space-y-11"
-          style="padding: 5%; gap: 10px"
-        >
-          <!-- Text -->
-          <div class="mt-10">
-            <svg
-              width="60px"
-              height="50px"
-              viewBox="0 0 12 12"
-              enable-background="new 0 0 12 12"
-              id="Слой_1"
-              version="1.1"
-              xml:space="preserve"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              class="bounce lg:mx-0 mx-auto"
-            >
-              <path
-                d="M6,0C3.2385864,0,1,2.2385864,1,5s2.5,5,5,7c2.5-2,5-4.2385864,5-7S8.7614136,0,6,0z M6,7  C4.8954468,7,4,6.1045532,4,5s0.8954468-2,2-2s2,0.8954468,2,2S7.1045532,7,6,7z"
-                fill="#FF8C00"
-              />
-            </svg>
-            <div
-              class="flex flex-col lg:text-left text-center whitespace-nowrap"
-            >
-              <h1 class="text-black md:inline hidden">27 มกราคม 2567</h1>
-              <h3 class="text-black md:hidden inline">27 มกราคม 2567</h3>
-              <h2 class="text-black md:inline hidden">
-                ณ อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC)<br />มหาวิทยาลัยสงขลานครินทร์
-                ชั้น 8
+    <!-- Page 3 -->
+    <section id="about"
+      class="relative h-screen bg-center bg-cover bg-white overflow-scroll [&::-webkit-scrollbar]:hidden">
+      <div class="">
+        <h1 class="md:flex hidden text-center justify-center pt-20 text-black"
+          style="padding-bottom: 1%; letter-spacing: -2px">
+          What is Barcamp?
+        </h1>
+        <h3 class="md:hidden flex items-center justify-center pt-20 text-black"
+          style="padding-bottom: 1%; letter-spacing: -2px">
+          What is Barcamp?
+        </h3>
+        <div style="padding-left: 5%; padding-right: 5%; gap: 10px">
+          <div class="bg-yellow bg-opacity-30 h-full rounded-3xl">
+            <div class="flex lg:flex-row flex-col items-center" style="padding: 5%; gap: 30px">
+              <div class="max-w-[500px] min-w-[300px]">
+                <img src="img/barcamp8.png" alt="รูปภาพ" align="right" />
+              </div>
+              <div>
+                <h2 class="font-bold md:text-2xl text-xl lg:text-left text-center">
+                  หลายคนอาจสงสัยว่า "บาร์แคมป์" คืออะไร?
+                </h2>
+                <h2 class="md:text-lg text-base lg:text-left text-center break-words">
+                  บาร์แคมป์ (Barcamp) มักถูกเรียกว่า "งานสัมมนานอกกรอบ"
+                  (un-conference)
+                  โดยทั่วไปบาร์แคมป์เป็นการสนทนากันระหว่างผู้เข้าร่วมงานกันเองโดยหัวใจสำคัญของงาน
+                  คือ การรวบรวมคนที่ชื่นชอบในเทคโนโลยีมาเจอกัน
+                  มีสถานที่ให้เสวนาแลกเปลี่ยนทัศนคติระหว่างกัน
+                  ซึ่งจะทำให้ทุกคนสามารถแชร์ความรู้ได้อย่างเต็มที่
+                </h2>
+              </div>
+            </div>
+            <div class="flex justify-center items-center flex-col lg:pt-5 pt-5" style="padding-bottom: 4%">
+              <h2 class="md:inline hidden">
+                ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
               </h2>
-              <h4 class="text-black md:hidden inline">
-                ณ อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC)<br />มหาวิทยาลัยสงขลานครินทร์
-                ชั้น 8
+              <h4 class="md:hidden inline font-bold">
+                ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
               </h4>
+              <button class="button font-bold" style="margin-top: 10px">
+                <h2 class="md:inline hidden">ลงทะเบียน</h2>
+                <h4 class="md:hidden inline">ลงทะเบียน</h4>
+              </button>
             </div>
           </div>
-          <!-- Map -->
-          <div class="flex items-center justify-center lg:w-1/2 w-2/3">
-            <iframe
-              class=""
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0027836025733!2d100.49468046525142!3d7.008954019272643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d29f53320558d%3A0x44bc2a2c81175fd9!2z4Lio4Li54LiZ4Lii4LmM4Lia4Lij4Li04LiB4Liy4Lij4Lin4Li04LiK4Liy4LiB4Liy4LijIOC4oeC4q-C4suC4p-C4tOC4l-C4ouC4suC4peC4seC4ouC4quC4h-C4guC4peC4suC4meC4hOC4o-C4tOC4meC4l-C4o-C5jA!5e0!3m2!1sth!2sth!4v1669909066081!5m2!1sth!2sth"
-              width="600"
-              height="400"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
         </div>
-      </section>
-
-      <!-- Page 3 -->
-      <section
-        id="about"
-        class="relative h-screen bg-center bg-cover bg-white overflow-scroll [&::-webkit-scrollbar]:hidden"
-      >
-        <div class="">
-          <h1
-            class="md:flex hidden text-center justify-center pt-20 text-black"
-            style="padding-bottom: 1%; letter-spacing: -2px"
-          >
-            What is Barcamp?
-          </h1>
-          <h3
-            class="md:hidden flex items-center justify-center pt-20 text-black"
-            style="padding-bottom: 1%; letter-spacing: -2px"
-          >
-            What is Barcamp?
-          </h3>
-          <div style="padding-left: 5%; padding-right: 5%; gap: 10px">
-            <div class="bg-yellow bg-opacity-30 h-full rounded-3xl">
+      </div>
+    </section>
+    <!-- Page 4 -->
+    <section class="relative h-screen bg-center bg-cover bg-white overflow-scroll [&::-webkit-scrollbar]:hidden">
+      <div class="w-full pl-10 pr-10 absolute sm:top-[12px] top-[10px] left-[50%] translate-x-[-50%]">
+        <h1 class="md:flex hidden text-center justify-center pt-20 pb-10 text-black"
+          style="padding-bottom: 1%; letter-spacing: -2px">
+          Timeline
+        </h1>
+        <h3 class="md:hidden flex items-center justify-center pt-20 pb-10 text-black"
+          style="padding-bottom: 1%; letter-spacing: -2px">
+          Timeline
+        </h3>
+        <ol class="items-center md:flex md:pt-40 sm:pt-10 pt-2">
+          <li class="relative mb-6 sm:mb-0">
+            <div class="flex items-center">
               <div
-                class="flex lg:flex-row flex-col items-center"
-                style="padding: 5%; gap: 30px"
-              >
-                <div class="max-w-[500px] min-w-[300px]">
-                  <img src="img/barcamp8.png" alt="รูปภาพ" align="right" />
-                </div>
-                <div>
-                  <h2
-                    class="font-bold md:text-2xl text-xl lg:text-left text-center"
-                  >
-                    หลายคนอาจสงสัยว่า "บาร์แคมป์" คืออะไร?
-                  </h2>
-                  <h2
-                    class="md:text-lg text-base lg:text-left text-center break-words"
-                  >
-                    บาร์แคมป์ (Barcamp) มักถูกเรียกว่า "งานสัมมนานอกกรอบ"
-                    (un-conference)
-                    โดยทั่วไปบาร์แคมป์เป็นการสนทนากันระหว่างผู้เข้าร่วมงานกันเองโดยหัวใจสำคัญของงาน
-                    คือ การรวบรวมคนที่ชื่นชอบในเทคโนโลยีมาเจอกัน
-                    มีสถานที่ให้เสวนาแลกเปลี่ยนทัศนคติระหว่างกัน
-                    ซึ่งจะทำให้ทุกคนสามารถแชร์ความรู้ได้อย่างเต็มที่
-                  </h2>
-                </div>
-              </div>
-              <div
-                class="flex justify-center items-center flex-col lg:pt-5 pt-5"
-                style="padding-bottom: 4%"
-              >
-                <h2 class="md:inline hidden">
-                  ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
-                </h2>
-                <h4 class="md:hidden inline font-bold">
-                  ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
-                </h4>
-                <button class="button font-bold" style="margin-top: 10px">
-                  <h2 class="md:inline hidden">ลงทะเบียน</h2>
-                  <h4 class="md:hidden inline">ลงทะเบียน</h4>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Page 4 -->
-      <section
-        class="relative h-screen bg-center bg-cover bg-white overflow-scroll [&::-webkit-scrollbar]:hidden"
-      >
-        <div
-          class="w-full pl-10 pr-10 absolute sm:top-[12px] top-[10px] left-[50%] translate-x-[-50%]"
-        >
-          <h1
-            class="md:flex hidden text-center justify-center pt-20 pb-10 text-black"
-            style="padding-bottom: 1%; letter-spacing: -2px"
-          >
-            Timeline
-          </h1>
-          <h3
-            class="md:hidden flex items-center justify-center pt-20 pb-10 text-black"
-            style="padding-bottom: 1%; letter-spacing: -2px"
-          >
-            Timeline
-          </h3>
-          <ol class="items-center md:flex md:pt-40 sm:pt-10 pt-2">
-            <li class="relative mb-6 sm:mb-0">
-              <div class="flex items-center">
-                <div
-                  class="z-10 flex items-center justify-center w-6 h-6 bg-yellow rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                >
-                  <svg
-                    class="w-2.5 h-2.5 text-white dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
-                ></div>
-              </div>
-              <div class="mt-3 sm:pe-8">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  First time of Barcamp
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                >
-                  In 2005</time
-                >
-                <h2
-                  class="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  บาร์แคมป์จัดขึ้นครั้งแรกเมื่อ พ.ศ. 2548 ที่เมืองพาโลอัลโต
-                  สหรัฐอเมริกา ได้
-                  รับความนิยมจนมีการจัดบาร์แคมป์กระจายไปตามเมืองต่างๆ
-                  ทั่วโลกอย่าง รวดเร็ว
-                </h2>
-              </div>
-            </li>
-            <li class="relative mb-6 sm:mb-0">
-              <div class="flex items-center">
-                <div
-                  class="z-10 flex items-center justify-center w-6 h-6 bg-yellow rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                >
-                  <svg
-                    class="w-2.5 h-2.5 text-white dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
-                ></div>
-              </div>
-              <div class="mt-3 sm:pe-8">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  Barcamp in Thailand
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                  >January 26th, 2008
-                </time>
-                <h2
-                  class="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  ในประเทศไทย บาร์แคมป์ได้จัดขึ้นครั้งแรกเมื่อวันที่ 26 มกราคม
-                  พ.ศ. 2551 ที่กรุงเทพมหานคร
-                  จากนั้นได้มีผู้สนใจจัดงานตามจังหวัดต่างๆ ได้แก่ เชียงใหม่
-                  สงขลา และ ภูเก็ต
-                </h2>
-              </div>
-            </li>
-            <li class="relative mb-6 sm:mb-0">
-              <div class="flex items-center">
-                <div
-                  class="z-10 flex items-center justify-center w-6 h-6 bg-yellow rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                >
-                  <svg
-                    class="w-2.5 h-2.5 text-white dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
-                ></div>
-              </div>
-              <div class="mt-3 sm:pe-8">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  Barcamp in Songkhla
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                  >Jun 28th, 2008
-                </time>
-                <h2
-                  class="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  สำหรับจังหวัดสงขลานั้นบาร์แคมป์จัดขึ้นครั้ง แรกเมื่อวันที่ 28
-                  มิถุนายน พ.ศ. 2551 ณ ภาควิชาวิศวกรรมคอมพิวเตอร์
-                  มหาวิทยาลัยสงขลานครินทร์
-                </h2>
-              </div>
-            </li>
-            <li class="relative mb-6 sm:mb-0">
-              <div class="flex items-center">
-                <div
-                  class="z-10 flex items-center justify-center w-6 h-6 bg-yellow rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                >
-                  <svg
-                    class="w-2.5 h-2.5 text-white dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
-                ></div>
-              </div>
-              <div class="mt-3 sm:pe-8">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  Coming soon
-                </h3>
-                <time
-                  class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                  >Jan 27th, 2024</time
-                >
-                <h2
-                  class="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  บาร์แคมป์ได้ดำเนินมาถึงครั้งที่ 8
-                  ซึ่งจัดที่มหาวิทยาลัยสงขลานครินทร์ ณ
-                  อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC) ชั้น 8
-                </h2>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- Page 5 -->
-      <section
-        id="gallery"
-        class="relative h-screen bg-center bg-cover bg-white"
-      >
-        <div class="flex items-center pt-20 flex-col h-full">
-          <h1
-            class="text-black flex items-center justify-center"
-            style="letter-spacing: -2px"
-          >
-            Gallery
-          </h1>
-          <div class="container_gallery">
-            <div class="mySlides">
-              <div class="numbertext">1 / 6</div>
-              <img src="img/gallery1.jpg" style="width: 100%" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">2 / 6</div>
-              <img src="img/gallery2.jpg" style="width: 100%" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">3 / 6</div>
-              <img src="img/gallery3.jpg" style="width: 100%" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">4 / 6</div>
-              <img src="img/gallery4.jpg" style="width: 100%" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">5 / 6</div>
-              <img src="img/gallery5.jpg" style="width: 100%" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">6 / 6</div>
-              <img src="img/gallery6.jpg" style="width: 100%" />
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
-
-            <div class="row">
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="img/gallery1.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(1)"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="img/gallery2.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(2)"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="img/gallery3.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(3)"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="img/gallery4.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(4)"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="img/gallery5.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(5)"
-                />
-              </div>
-              <div class="column">
-                <img
-                  class="demo cursor"
-                  src="img/gallery6.jpg"
-                  style="width: 100%"
-                  onclick="currentSlide(6)"
-                />
-              </div>
-            </div>
-          </div>
-
-          <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
-
-            function plusSlides(n) {
-              showSlides((slideIndex += n));
-            }
-
-            function currentSlide(n) {
-              showSlides((slideIndex = n));
-            }
-
-            function showSlides(n) {
-              let i;
-              let slides = document.getElementsByClassName("mySlides");
-              let dots = document.getElementsByClassName("demo");
-              let captionText = document.getElementById("caption");
-              if (n > slides.length) {
-                slideIndex = 1;
-              }
-              if (n < 1) {
-                slideIndex = slides.length;
-              }
-              for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-              }
-              for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex - 1].style.display = "block";
-              dots[slideIndex - 1].className += " active";
-              captionText.innerHTML = dots[slideIndex - 1].alt;
-            }
-          </script>
-        </div>
-      </section>
-      <!-- Page 6 -->
-      <section class="relative bg-white h-screen w-full pt-20">
-        <!-- Label -->
-        <h1 class="flex justify-center items-center w-full">Sponsors</h1>
-        <!-- Desktop Sponsor -->
-        <div
-          class="md:flex hidden flex-col w-full justify-center items-center h-full space-y-10 px-10"
-        >
-          <!-- First Row -->
-          <div class="flex space-x-7 w-full justify-center">
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[200px] min-w-[120px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[200px] min-w-[120px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[200px] min-w-[120px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[200px] min-w-[120px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[200px] min-w-[120px]"
-            />
-          </div>
-          <!-- Second Row -->
-          <div class="flex space-x-7 w-full justify-center">
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[200px] min-w-[120px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[200px] min-w-[120px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[200px] min-w-[120px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[200px] min-w-[120px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[200px] min-w-[120px]"
-            />
-          </div>
-        </div>
-        <!-- Mobile Sponsor -->
-        <div
-          class="md:hidden flex w-full justify-center items-center h-full px-10 space-x-3"
-        >
-          <!-- First Column -->
-          <div
-            class="flex flex-col space-y-5 w-full justify-center items-center"
-          >
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[130px] min-w-[100px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[130px] min-w-[100px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[130px] min-w-[100px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[130px] min-w-[100px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[130px] min-w-[100px]"
-            />
-          </div>
-          <!-- Second Column -->
-          <div
-            class="flex flex-col space-y-5 w-full justify-center items-center"
-          >
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[130px] min-w-[100px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[130px] min-w-[100px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[130px] min-w-[100px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[130px] min-w-[100px]"
-            />
-            <img
-              src="img/sponsor_nexthop.png"
-              alt=""
-              class="object-cover max-w-[130px] min-w-[100px]"
-            />
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <section>
-        <footer class="flex justify-center">
-          <div
-            class="flex md:justify-between justify-center flex-col md:flex-row md:space-x-4 items-center lg:text-[18px] text-[16px] text-white bg-brown w-full md:pl-10 md:pr-10 md:h-24 h-48"
-          >
-            <!-- LOGO + BARCAMP -->
-            <div class="flex justify-center items-center select-none">
-              <img src="img/logo.png" alt="" class="object-cover h-[75px]" />
-              <div class="uppercase" style="letter-spacing: 3px">
-                barcamp songkhla
-              </div>
-            </div>
-
-            <!-- Social Media -->
-            <div class="flex items-center space-x-2 select-none">
-              <div class="flex items-center">
-                <p>Follow Us</p>
-                <svg
-                  width="40px"
-                  height="40px"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#ffffff"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-
-                  <g id="SVGRepo_iconCarrier">
-                    <g id="Interface / Line_Xl">
-                      <path
-                        id="Vector"
-                        d="M12 21V3"
-                        stroke-width="0.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                  </g>
+                class="z-10 flex items-center justify-center w-6 h-6 bg-yellow rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                <svg class="w-2.5 h-2.5 text-white dark:text-white" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                 </svg>
               </div>
-              <div class="flex flex-col md:flex-row md:space-x-5">
-                <!-- Facebook -->
-                <div class="flex items-center space-x-2 select-none">
-                  <!-- Facebook Logo -->
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="100"
-                    height="100"
-                    viewBox="0 0 48 48"
-                    class="w-10 h-10"
-                  >
-                    <path
-                      fill="#3F51B5"
-                      d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
-                    ></path>
-                    <path
-                      fill="#FFF"
-                      d="M34.368,25H31v13h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287C31.104,17,31,17.6,31,18.723V21h4L34.368,25z"
-                    ></path>
-                  </svg>
-                  <!-- Facebook Label -->
-                  <p>Barcamp Songkhla</p>
-                </div>
+              <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+            </div>
+            <div class="mt-3 sm:pe-8">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                First time of Barcamp
+              </h3>
+              <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                In 2005</time>
+              <h2 class="text-base font-normal text-gray-500 dark:text-gray-400">
+                บาร์แคมป์จัดขึ้นครั้งแรกเมื่อ พ.ศ. 2548 ที่เมืองพาโลอัลโต
+                สหรัฐอเมริกา ได้
+                รับความนิยมจนมีการจัดบาร์แคมป์กระจายไปตามเมืองต่างๆ
+                ทั่วโลกอย่าง รวดเร็ว
+              </h2>
+            </div>
+          </li>
+          <li class="relative mb-6 sm:mb-0">
+            <div class="flex items-center">
+              <div
+                class="z-10 flex items-center justify-center w-6 h-6 bg-yellow rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                <svg class="w-2.5 h-2.5 text-white dark:text-white" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                </svg>
+              </div>
+              <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+            </div>
+            <div class="mt-3 sm:pe-8">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Barcamp in Thailand
+              </h3>
+              <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">January 26th,
+                2008
+              </time>
+              <h2 class="text-base font-normal text-gray-500 dark:text-gray-400">
+                ในประเทศไทย บาร์แคมป์ได้จัดขึ้นครั้งแรกเมื่อวันที่ 26 มกราคม
+                พ.ศ. 2551 ที่กรุงเทพมหานคร
+                จากนั้นได้มีผู้สนใจจัดงานตามจังหวัดต่างๆ ได้แก่ เชียงใหม่
+                สงขลา และ ภูเก็ต
+              </h2>
+            </div>
+          </li>
+          <li class="relative mb-6 sm:mb-0">
+            <div class="flex items-center">
+              <div
+                class="z-10 flex items-center justify-center w-6 h-6 bg-yellow rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                <svg class="w-2.5 h-2.5 text-white dark:text-white" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                </svg>
+              </div>
+              <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+            </div>
+            <div class="mt-3 sm:pe-8">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Barcamp in Songkhla
+              </h3>
+              <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Jun 28th, 2008
+              </time>
+              <h2 class="text-base font-normal text-gray-500 dark:text-gray-400">
+                สำหรับจังหวัดสงขลานั้นบาร์แคมป์จัดขึ้นครั้ง แรกเมื่อวันที่ 28
+                มิถุนายน พ.ศ. 2551 ณ ภาควิชาวิศวกรรมคอมพิวเตอร์
+                มหาวิทยาลัยสงขลานครินทร์
+              </h2>
+            </div>
+          </li>
+          <li class="relative mb-6 sm:mb-0">
+            <div class="flex items-center">
+              <div
+                class="z-10 flex items-center justify-center w-6 h-6 bg-yellow rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                <svg class="w-2.5 h-2.5 text-white dark:text-white" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                </svg>
+              </div>
+              <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+            </div>
+            <div class="mt-3 sm:pe-8">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Coming soon
+              </h3>
+              <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Jan 27th,
+                2024</time>
+              <h2 class="text-base font-normal text-gray-500 dark:text-gray-400">
+                บาร์แคมป์ได้ดำเนินมาถึงครั้งที่ 8
+                ซึ่งจัดที่มหาวิทยาลัยสงขลานครินทร์ ณ
+                อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC) ชั้น 8
+              </h2>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-                <!-- Instagram -->
-                <div class="flex items-center space-x-2 select-none">
-                  <!-- Instagram Logo -->
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="100"
-                    height="100"
-                    viewBox="0 0 48 48"
-                    class="w-10 h-10"
-                  >
-                    <radialGradient
-                      id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1"
-                      cx="19.38"
-                      cy="42.035"
-                      r="44.899"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0" stop-color="#fd5"></stop>
-                      <stop offset=".328" stop-color="#ff543f"></stop>
-                      <stop offset=".348" stop-color="#fc5245"></stop>
-                      <stop offset=".504" stop-color="#e64771"></stop>
-                      <stop offset=".643" stop-color="#d53e91"></stop>
-                      <stop offset=".761" stop-color="#cc39a4"></stop>
-                      <stop offset=".841" stop-color="#c837ab"></stop>
-                    </radialGradient>
-                    <path
-                      fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)"
-                      d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"
-                    ></path>
-                    <radialGradient
-                      id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2"
-                      cx="11.786"
-                      cy="5.54"
-                      r="29.813"
-                      gradientTransform="matrix(1 0 0 .6663 0 1.849)"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0" stop-color="#4168c9"></stop>
-                      <stop
-                        offset=".999"
-                        stop-color="#4168c9"
-                        stop-opacity="0"
-                      ></stop>
-                    </radialGradient>
-                    <path
-                      fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)"
-                      d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"
-                    ></path>
-                    <path
-                      fill="#fff"
-                      d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"
-                    ></path>
-                    <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle>
-                    <path
-                      fill="#fff"
-                      d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"
-                    ></path>
-                  </svg>
-                  <!-- Instagram Label -->
-                  <p>barcampsk</p>
-                </div>
+    <!-- Page 5 -->
+    <section id="gallery" class="relative h-screen bg-center bg-cover bg-white">
+      <div class="flex items-center pt-20 flex-col h-full">
+        <h1 class="text-black flex items-center justify-center" style="letter-spacing: -2px">
+          Gallery
+        </h1>
+        <div class="container_gallery">
+          <div class="mySlides">
+            <div class="numbertext">1 / 6</div>
+            <img src="img/gallery1.jpg" style="width: 100%" />
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">2 / 6</div>
+            <img src="img/gallery2.jpg" style="width: 100%" />
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">3 / 6</div>
+            <img src="img/gallery3.jpg" style="width: 100%" />
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">4 / 6</div>
+            <img src="img/gallery4.jpg" style="width: 100%" />
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">5 / 6</div>
+            <img src="img/gallery5.jpg" style="width: 100%" />
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+            <img src="img/gallery6.jpg" style="width: 100%" />
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+
+          <div class="row">
+            <div class="column">
+              <img class="demo cursor" src="img/gallery1.jpg" style="width: 100%" onclick="currentSlide(1)" />
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="img/gallery2.jpg" style="width: 100%" onclick="currentSlide(2)" />
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="img/gallery3.jpg" style="width: 100%" onclick="currentSlide(3)" />
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="img/gallery4.jpg" style="width: 100%" onclick="currentSlide(4)" />
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="img/gallery5.jpg" style="width: 100%" onclick="currentSlide(5)" />
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="img/gallery6.jpg" style="width: 100%" onclick="currentSlide(6)" />
+            </div>
+          </div>
+        </div>
+
+        <script>
+          let slideIndex = 1;
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides((slideIndex += n));
+          }
+
+          function currentSlide(n) {
+            showSlides((slideIndex = n));
+          }
+
+          function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) {
+              slideIndex = 1;
+            }
+            if (n < 1) {
+              slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+          }
+        </script>
+      </div>
+    </section>
+    <!-- Page 6 -->
+    <section class="relative bg-white h-screen w-full pt-20">
+      <!-- Label -->
+      <h1 class="flex justify-center items-center w-full">Sponsors</h1>
+      <!-- Desktop Sponsor -->
+      <div class="md:flex hidden flex-col w-full justify-center items-center h-full space-y-10 px-10">
+        <!-- First Row -->
+        <div class="flex space-x-7 w-full justify-center">
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[200px] min-w-[120px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[200px] min-w-[120px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[200px] min-w-[120px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[200px] min-w-[120px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[200px] min-w-[120px]" />
+        </div>
+        <!-- Second Row -->
+        <div class="flex space-x-7 w-full justify-center">
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[200px] min-w-[120px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[200px] min-w-[120px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[200px] min-w-[120px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[200px] min-w-[120px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[200px] min-w-[120px]" />
+        </div>
+      </div>
+      <!-- Mobile Sponsor -->
+      <div class="md:hidden flex w-full justify-center items-center h-full px-10 space-x-3">
+        <!-- First Column -->
+        <div class="flex flex-col space-y-5 w-full justify-center items-center">
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[130px] min-w-[100px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[130px] min-w-[100px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[130px] min-w-[100px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[130px] min-w-[100px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[130px] min-w-[100px]" />
+        </div>
+        <!-- Second Column -->
+        <div class="flex flex-col space-y-5 w-full justify-center items-center">
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[130px] min-w-[100px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[130px] min-w-[100px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[130px] min-w-[100px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[130px] min-w-[100px]" />
+          <img src="img/sponsor_nexthop.png" alt="" class="object-cover max-w-[130px] min-w-[100px]" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section>
+      <footer class="flex justify-center">
+        <div
+          class="flex md:justify-between justify-center flex-col md:flex-row md:space-x-4 items-center lg:text-[18px] text-[16px] text-white bg-brown w-full md:pl-10 md:pr-10 md:h-24 h-48">
+          <!-- LOGO + BARCAMP -->
+          <div class="flex justify-center items-center select-none">
+            <img src="img/logo.png" alt="" class="object-cover h-[75px]" />
+            <div class="uppercase" style="letter-spacing: 3px">
+              barcamp songkhla
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="flex items-center space-x-2 select-none">
+            <div class="flex items-center">
+              <p>Follow Us</p>
+              <svg width="40px" height="40px" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                stroke="#ffffff">
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                <g id="SVGRepo_iconCarrier">
+                  <g id="Interface / Line_Xl">
+                    <path id="Vector" d="M12 21V3" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="flex flex-col md:flex-row md:space-x-5">
+              <!-- Facebook -->
+              <div class="flex items-center space-x-2 select-none">
+                <!-- Facebook Logo -->
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48"
+                  class="w-10 h-10">
+                  <path fill="#3F51B5"
+                    d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z">
+                  </path>
+                  <path fill="#FFF"
+                    d="M34.368,25H31v13h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287C31.104,17,31,17.6,31,18.723V21h4L34.368,25z">
+                  </path>
+                </svg>
+                <!-- Facebook Label -->
+                <p>Barcamp Songkhla</p>
+              </div>
+
+              <!-- Instagram -->
+              <div class="flex items-center space-x-2 select-none">
+                <!-- Instagram Logo -->
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48"
+                  class="w-10 h-10">
+                  <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899"
+                    gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#fd5"></stop>
+                    <stop offset=".328" stop-color="#ff543f"></stop>
+                    <stop offset=".348" stop-color="#fc5245"></stop>
+                    <stop offset=".504" stop-color="#e64771"></stop>
+                    <stop offset=".643" stop-color="#d53e91"></stop>
+                    <stop offset=".761" stop-color="#cc39a4"></stop>
+                    <stop offset=".841" stop-color="#c837ab"></stop>
+                  </radialGradient>
+                  <path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)"
+                    d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z">
+                  </path>
+                  <radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813"
+                    gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#4168c9"></stop>
+                    <stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop>
+                  </radialGradient>
+                  <path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)"
+                    d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z">
+                  </path>
+                  <path fill="#fff"
+                    d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z">
+                  </path>
+                  <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle>
+                  <path fill="#fff"
+                    d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z">
+                  </path>
+                </svg>
+                <!-- Instagram Label -->
+                <p>barcampsk</p>
               </div>
             </div>
           </div>
-        </footer>
-      </section>
-    </article>
-  </body>
+        </div>
+      </footer>
+    </section>
+  </article>
+</body>
+
 </html>

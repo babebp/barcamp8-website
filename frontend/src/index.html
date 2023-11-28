@@ -160,6 +160,11 @@
         width: 180px;
         height: 30px;
       }
+
+      .homepage-button {
+        width: 180px;
+        height: 40px;
+      }
     }
 
     .container_gallery_mobile {
@@ -371,7 +376,10 @@
         </div>
 
         <div class="absolute bottom-[80px] left-[50%] translate-x-[-50%]">
-          <button class="homepage-button font-bold">ลงทะเบียน</button>
+          <button class="homepage-button font-bold">
+            <h2 class="md:inline hidden">ลงทะเบียน</h2>
+            <h4 class="md:hidden inline">ลงทะเบียน</h4>
+          </button>
         </div>
       </div>
     </section>
@@ -444,7 +452,7 @@
                 <h2 class="font-bold md:text-2xl text-xl lg:text-left text-center">
                   หลายคนอาจสงสัยว่า "บาร์แคมป์" คืออะไร?
                 </h2>
-                <h2 class="md:text-lg lg:text-2xl text-base lg:text-lg lg:text-left text-center break-words">
+                <h2 class="md:text-lg text-base lg:text-lg lg:text-left text-center break-words">
                   บาร์แคมป์ (Barcamp) มักถูกเรียกว่า "งานสัมมนานอกกรอบ"
                   (un-conference)
                   โดยทั่วไปบาร์แคมป์เป็นการสนทนากันระหว่างผู้เข้าร่วมงานกันเองโดยหัวใจสำคัญของงาน
@@ -482,9 +490,9 @@
           style="padding-bottom: 1%; letter-spacing: -2px">
           Timeline
         </h3>
-        <div class="lg:pt-72 sm:pt-10 pt-2 ">
+        <div class="xl:pt-72 lg:pt-80 sm:pt-10 pt-2">
 
-          <ol class="lg:flex lg:bg-transparent bg-white p-5 rounded-xl mb-5">
+          <ol class="lg:flex lg:bg-transparent bg-white rounded-xl mb-5 lg:p-0 p-5">
             <li class="relative mb-6 sm:mb-0">
               <div class="flex items-center">
                 <div
@@ -497,7 +505,7 @@
                 </div>
                 <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
               </div>
-              <div class="mt-3 sm:pe-8 lg:bg-white lg:rounded-xl lg:shadow-2xl lg:p-4">
+              <div class="mt-5 sm:pe-8 lg:bg-white lg:rounded-xl lg:shadow-2xl lg:p-4">
                 <h3 class="text-lg lg:text-2xl font-semibold text-gray-900 dark:text-white">
                   First time of Barcamp
                 </h3>
@@ -511,7 +519,7 @@
                 </h2>
               </div>
             </li>
-            <li class="relative ">
+            <li class="relative mb-6 lg:mb-0">
               <div class="flex items-center">
                 <div
                   class="z-10 flex items-center justify-center w-10 h-10 bg-yellow rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
@@ -523,7 +531,7 @@
                 </div>
                 <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
               </div>
-              <div class="mt-3 xl:mt-[-280px] lg:mt-[-350px]  lg:bg-white lg:rounded-xl lg:shadow-2xl lg:p-4">
+              <div class="mt-3 xl:mt-[-250px] lg:mt-[-310px] lg:bg-white lg:rounded-xl lg:shadow-2xl lg:p-4">
                 <h3 class="text-lg lg:text-2xl font-semibold text-gray-900 dark:text-white">
                   Barcamp in Thailand
                 </h3>
@@ -531,7 +539,7 @@
                   2008
                 </time>
                 <h2 class="text-base lg:text-lg font-normal text-gray-500 dark:text-gray-400">
-                  ในประเทศไทย บาร์แคมป์ได้จัดขึ้นครั้งแรกเมื่อวันที่ 26 มกราคม
+                  บาร์แคมป์ได้จัดขึ้นครั้งแรกเมื่อวันที่ 26 มกราคม
                   พ.ศ. 2551 ที่กรุงเทพมหานคร
                   จากนั้นได้มีผู้สนใจจัดงานตามจังหวัดต่างๆ ได้แก่ เชียงใหม่
                   สงขลา และ ภูเก็ต
@@ -550,7 +558,7 @@
                 </div>
                 <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
               </div>
-              <div class="mt-3 sm:pe-8 lg:bg-white lg:rounded-xl lg:shadow-2xl lg:p-4">
+              <div class="mt-5 sm:pe-8 lg:bg-white lg:rounded-xl lg:shadow-2xl lg:p-4">
                 <h3 class="text-lg lg:text-2xl font-semibold text-gray-900 dark:text-white">
                   Barcamp in Songkhla
                 </h3>
@@ -576,16 +584,15 @@
                 </div>
                 <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
               </div>
-              <div class="mt-3 xl:mt-[-280px] lg:mt-[-320px] lg:bg-white lg:rounded-xl lg:shadow-2xl lg:p-4">
+              <div class="mt-3 xl:mt-[-250px] lg:mt-[-310px] lg:bg-white lg:rounded-xl lg:shadow-2xl lg:p-4">
                 <h3 class="text-lg lg:text-2xl font-semibold text-gray-900 dark:text-white">
                   Coming soon
                 </h3>
                 <time class="block mb-2 text-md font-normal leading-none text-gray-400 dark:text-gray-500">Jan 27th,
                   2024</time>
                 <h2 class="text-base lg:text-lg font-normal text-gray-500 dark:text-gray-400">
-                  บาร์แคมป์ได้ดำเนินมาถึงครั้งที่ 8
-                  ซึ่งจัดที่มหาวิทยาลัยสงขลานครินทร์ ณ
-                  อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC) ชั้น 8
+                  บาร์แคมป์ได้ดำเนินมาถึงครั้งที่8
+                  ซึ่งจัดที่อาคารศูนย์ทรัพยากรการเรียนรู้ฯ ชั้น8 มหาวิทยาลัยสงขลานครินทร์
                 </h2>
               </div>
             </li>

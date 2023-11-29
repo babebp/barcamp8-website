@@ -43,6 +43,12 @@
       font-weight: bold;
     }
 
+    h7 {
+      font-family: "Noto Sans Thai";
+      font-size: 22px;
+      font-weight: 600;
+    }
+
 
     .p2 {
       font-family: Arial, Helvetica, sans-serif;
@@ -398,15 +404,18 @@
         </h3>
       </div>
       <!-- Content -->
-      <div class="flex lg:flex-row flex-col w-full lg:justify-between space-y-11" style="padding: 5%; gap: 10px">
+      <div class="flex lg:flex-row flex-col w-full items-center lg:justify-between space-y-11"
+        style="padding: 5%; gap: 10px">
         <div>
           <!-- Header -->
-          <div class="flex items-center space-x-2 mt-6">
+          <div class="flex items-center lg:justify-start justify-center space-x-2 mt-6">
             <!-- Header Text -->
-            <h1>เวลาและสถานที่จัดงาน</h1>
+            <h1 class="lg:inline hidden">เวลาและสถานที่จัดงาน</h1>
+            <h6 class="lg:hidden inline">เวลาและสถานที่จัดงาน</h6>
+
           </div>
           <!-- Date -->
-          <div class="flex items-center space-x-10 mt-16">
+          <div class="flex items-center lg:space-x-10 space-x-5 mt-16">
             <!-- Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
               class="w-12 h-12 text-yellow">
@@ -417,20 +426,23 @@
                 clip-rule="evenodd" />
             </svg>
             <!-- Date Text -->
-            <h6>27 มกราคม 2567</h6>
+            <h6 class="lg:inline hidden">27 มกราคม 2567</h6>
+            <h7 class="lg:hidden inline">27 มกราคม 2567</h7>
           </div>
           <!-- Place -->
-          <div class="flex items-center space-x-10 mt-10">
+          <div class="flex items-center lg:justify-start justify-center lg:space-x-10 space-x-5 mt-10">
             <!-- Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              class="w-12 h-12 text-yellow">
+              class="sm:w-12 sm:h-12 w-14  h-14 text-yellow">
               <path fill-rule="evenodd"
                 d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
                 clip-rule="evenodd" />
             </svg>
 
             <!-- Place Text -->
-            <h6>ณ อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC)<br />มหาวิทยาลัยสงขลานครินทร์ชั้น 8</h6>
+            <h6 class="lg:inline hidden">ณ อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC)<br />มหาวิทยาลัยสงขลานครินทร์ชั้น 8</h6>
+            <h7 class="lg:hidden inline">ณ อาคารศูนย์ทรัพยากรการเรียนรู้ฯ (LRC)<br />มหาวิทยาลัยสงขลานครินทร์ชั้น 8</h7>
+
           </div>
         </div>
         <!-- Map -->

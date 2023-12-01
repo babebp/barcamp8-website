@@ -163,6 +163,7 @@
       }
     }
 
+
     /* md */
     @media (max-width: 767px) {
       .container_gallery {
@@ -633,7 +634,8 @@
     </section>
 
     <!-- Page 5 -->
-    <section id="gallery" class="relative h-screen bg-center bg-cover bg-white">
+    <section id="gallery"
+      class="relative sm:h-screen h-[620px] bg-center bg-cover bg-white overflow-scroll [&::-webkit-scrollbar]:hidden">
       <div class="flex items-center pt-20 flex-col h-full">
         <h1 class="text-black md:flex hidden items-center justify-center" style="letter-spacing: -2px">
           Gallery
@@ -641,7 +643,7 @@
         <h3 class="text-black md:hidden flex items-center justify-center" style="letter-spacing: -2px">
           Gallery
         </h3>
-        <div class="container_gallery">
+        <div class="container_gallery ">
           <div class="mySlides">
             <div class="numbertext">1 / 6</div>
             <img src="img/gallery1.jpg" style="width: 100%" />
@@ -734,7 +736,7 @@
       </div>
     </section>
     <!-- Page 6 -->
-    <section class="relative bg-white h-screen w-full pt-20 overflow-scroll [&::-webkit-scrollbar]:hidden">
+    <section class="relative bg-white h-screen w-full sm:pt-20 pt-14 overflow-scroll [&::-webkit-scrollbar]:hidden">
       <!-- Label -->
       <h1 class="md:flex justify-center items-center w-full hidden">Sponsors</h1>
       <h3 class="md:hidden flex justify-center items-center w-full">Sponsors</h3>

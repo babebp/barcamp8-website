@@ -783,6 +783,58 @@ video {
   height: calc(32vh);
 }
 
+.h-\[calc\(100vh\+8rem\)\] {
+  height: calc(100vh + 8rem);
+}
+
+.h-\[calc\(100vh-4rem\)\] {
+  height: calc(100vh - 4rem);
+}
+
+.h-\[calc\(100vh-2rem\)\] {
+  height: calc(100vh - 2rem);
+}
+
+.h-\[calc\(100vh-10rem\)\] {
+  height: calc(100vh - 10rem);
+}
+
+.h-\[calc\(100vh-20rem\)\] {
+  height: calc(100vh - 20rem);
+}
+
+.max-h-\[calc\(100vh-8rem\)\] {
+  max-height: calc(100vh - 8rem);
+}
+
+.max-h-\[calc\(100vh-2rem\)\] {
+  max-height: calc(100vh - 2rem);
+}
+
+.max-h-\[calc\(100vh-4rem\)\] {
+  max-height: calc(100vh - 4rem);
+}
+
+.max-h-\[calc\(100vh\+4rem\)\] {
+  max-height: calc(100vh + 4rem);
+}
+
+.max-h-\[calc\(100vh\+8rem\)\] {
+  max-height: calc(100vh + 8rem);
+}
+
+.max-h-\[calc\(100vh-20rem\)\] {
+  max-height: calc(100vh - 20rem);
+}
+
+.max-h-\[calc\(100vh-3rem\)\] {
+  max-height: calc(100vh - 3rem);
+}
+
+.max-h-\[calc\(100v-8rem\)\] {
+  max-height: calc(100v - 8rem);
+}
+
 .w-0 {
   width: 0px;
 }

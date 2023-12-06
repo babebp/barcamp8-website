@@ -352,7 +352,7 @@
     .marquee-container {
       white-space: nowrap;
       overflow: hidden;
-      animation: marquee 10s linear infinite;
+      animation: marquee 20s linear infinite;
       /* 10s คือระยะเวลา, linear คือการเคลื่อนไหวแบบเส้นตรง, infinite คือทำซ้ำตลอดเวลา */
     }
   </style>
@@ -434,8 +434,8 @@
       <div role="alert"
         class="relative bg-black bg-opacity-50 w-full pt-[71px] pb-4 z-30 flex flex-row text-white text-opacity-50"
         id="alertContainer">
-        <div class="">
-          <div class="py-[2px] animate-marquee whitespace-nowrap">
+        <div class="overflow-y-hidden [&::-webkit-scrollbar]:hidden overflow-x-clip">
+          <div class="py-[2px] animate-marquee whitespace-nowrap ">
             <span class="sm:text-xl text-md mx-4 ">
               วันจัดงาน : 27 มกราคม พ.ศ. 2567&nbsp;&nbsp;ณ อาคารศูนย์ทรัพยากรการเรียนรู้ฯ
               (LRC) มหาวิทยาลัยสงขลานครินทร์
@@ -497,12 +497,12 @@
           </div>
 
           <!-- Register Button -->
-          <div class="pt-10">
+          <!-- <div class="pt-10 flex justify-center">
             <button
               class="bg-transparent text-white text-bold border-[5px] border-white text-bold rounded-full sm:py-4 py-2 px-28 font-bold">
               <h2>Register</h2>
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -591,7 +591,7 @@
         </h3>
         <div style="gap: 10px" class="pl-10 pr-10">
           <div class="bg-yellow bg-opacity-10 border-[6px] border-yellow  h-full rounded-3xl">
-            <div class="flex lg:flex-row flex-col items-center pb-3"
+            <div class="flex lg:flex-row flex-col items-center sm:pb-20 pb-3"
               style="padding-left: 5%; padding-right: 5%; padding-top: 4%; gap: 30px">
               <div class="max-w-[500px] min-w-[200px] shadow-xl">
                 <img src="img/barcamp8.png" alt="รูปภาพ" align="right" class="rounded-md" />
@@ -610,7 +610,7 @@
                 </h2>
               </div>
             </div>
-            <div class="flex lg:items-end justify-center items-center flex-col xl:pt-5 pt-10 lg:pr-20"
+            <!-- <div class="flex lg:items-end justify-center items-center flex-col xl:pt-5 pt-10 lg:pr-20"
               style="padding-bottom: 4%">
               <h2 class="md:inline hidden pb-2">
                 ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
@@ -623,7 +623,7 @@
                 <h2 class="md:inline hidden">ลงทะเบียน</h2>
                 <h4 class="md:hidden inline">ลงทะเบียน</h4>
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

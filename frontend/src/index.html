@@ -359,7 +359,7 @@
 </head>
 
 <!-- Navbar -->
-<nav class="bg-yellow py-4 md:px-20 px-10 fixed top-0 w-full z-40 shadow-xl shadow-black/25">
+<nav class="bg-yellow py-4 md:px-20 px-10 fixed top-0 w-full z-40 shadow-xl shadow-black/25 select-none">
   <div class="flex justify-between items-center w-full">
     <div class="uppercase text-white" style="letter-spacing: 3px">
       <a href="#home">barcamp songkhla</a>
@@ -380,7 +380,7 @@
   </div>
 </nav>
 
-<div id="mobile-menu" class="bg-yellow fixed top-0 right-0 h-full w-0 overflow-hidden z-50">
+<div id="mobile-menu" class="bg-yellow fixed top-0 right-0 h-full w-0 overflow-hidden z-50 select-none">
   <div class="w-full flex justify-end">
     <button id="menu-close" class="text-white focus:outline-none pr-9 pt-3">
       <svg class="w-6 h-6 flex items-end" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -390,7 +390,7 @@
     </button>
   </div>
   <div class="relative mx-auto flex flex-col p-4 items-center space-y-[50px] mt-10">
-    <a href="#home" class="text-white py-2">Home</a>
+    <a href="#home" class="text-white py-2 ">Home</a>
     <a href="#about" class="text-white py-2">About</a>
     <a href="#gallery" class="text-white py-2">Gallery</a>
   </div>
@@ -434,7 +434,7 @@
 
       <!-- Alert -->
       <div role="alert"
-        class="relative bg-black bg-opacity-50 w-full pt-[71px] pb-4 z-30 flex flex-row text-white text-opacity-50"
+        class="relative bg-black bg-opacity-50 w-full pt-[71px] pb-4 z-30 flex flex-row text-white text-opacity-50 select-none"
         id="alertContainer">
         <div class="overflow-y-hidden [&::-webkit-scrollbar]:hidden overflow-x-clip">
           <div class="py-[2px] animate-marquee whitespace-nowrap ">
@@ -478,7 +478,7 @@
 
         <div class=" md:mt-80 mt-56">
           <!-- Date and Place -->
-          <div class="text-white">
+          <div class="text-white select-none">
             <!-- Date -->
             <div class="flex space-x-3">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -515,7 +515,7 @@
     <section class="relative h-auto bg-center bg-cover bg-white ">
       <div>
         <!-- Page Title -->
-        <div class="flex flex-row justify-center items-center">
+        <div class="flex flex-row justify-center items-center select-none">
           <h1 class="md:flex hidden text-center justify-center pt-20 text-black"
             style="padding-bottom: 1%; letter-spacing: -2px">
             Barcamp Event
@@ -570,7 +570,7 @@
             </div>
           </div>
           <!-- Map -->
-          <div class="flex items-center justify-center lg:w-1/2 sm:w-2/3 w-full bg-brown p-3 bg-opacity-20 rounded-xl">
+          <div class="flex items-center justify-center lg:w-1/2 sm:w-2/3 w-full bg-brown p-3 bg-opacity-20 rounded-xl select-none">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0027836025733!2d100.49468046525142!3d7.008954019272643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d29f53320558d%3A0x44bc2a2c81175fd9!2z4Lio4Li54LiZ4Lii4LmM4Lia4Lij4Li04LiB4Liy4Lij4Lin4Li04LiK4Liy4LiB4Liy4LijIOC4oeC4q-C4suC4p-C4tOC4l-C4ouC4suC4peC4seC4ouC4quC4h-C4guC4peC4suC4meC4hOC4o-C4tOC4meC4l-C4o-C5jA!5e0!3m2!1sth!2sth!4v1669909066081!5m2!1sth!2sth"
               width=100% height="400" style="border: 0" allowfullscreen="" loading="lazy"
@@ -583,13 +583,13 @@
 
     <!-- Page 3 -->
     <section id="about"
-      class="relative h-auto bg-center bg-cover bg-white ">
+      class="relative h-auto bg-center bg-cover bg-white">
       <div>
-        <h1 class="md:flex hidden text-center justify-center pt-20 text-black"
+        <h1 class="md:flex hidden text-center justify-center pt-20 text-black select-none"
           style="padding-bottom: 1%; letter-spacing: -2px">
           What is Barcamp?
         </h1>
-        <h3 class="md:hidden flex items-center justify-center pt-20 text-black"
+        <h3 class="md:hidden flex items-center justify-center pt-20 text-black select-none"
           style="padding-bottom: 1%; letter-spacing: -2px">
           What is Barcamp?
         </h3>
@@ -598,7 +598,7 @@
             <div class="flex lg:flex-row flex-col items-center sm:pb-20 pb-3"
               style="padding-left: 5%; padding-right: 5%; padding-top: 4%; gap: 30px">
               <div class="max-w-[500px] min-w-[200px] shadow-xl">
-                <img src="img/barcamp8.png" alt="รูปภาพ" align="right" class="rounded-md" />
+                <img src="img/barcamp8.png" alt="รูปภาพ" align="right" class="rounded-md select-none" />
               </div>
               <div class="lg:pl-10">
                 <h6 class="lg:text-left text-center text-black pb-4 lg:pt-0 pt-4 break-words">
@@ -637,11 +637,11 @@
     <section class="min-h-screen bg-center bg-cover "
       style="background-image: url(img/bg_timeline.png);">
       <div class="w-full pl-10 pr-10 pb-5">
-        <h1 class="md:flex hidden text-center justify-center pt-20 pb-10 text-black"
+        <h1 class="md:flex hidden text-center justify-center pt-20 pb-10 text-black select-none"
           style="padding-bottom: 1%; letter-spacing: -2px">
           Timeline
         </h1>
-        <h3 class="md:hidden flex items-center justify-center pt-20 pb-10 text-black"
+        <h3 class="md:hidden flex items-center justify-center pt-20 pb-10 text-black select-none"
           style="padding-bottom: 1%; letter-spacing: -2px">
           Timeline
         </h3>
@@ -785,7 +785,7 @@
 
     <!-- Page 5 -->
     <section id="gallery"
-      class="relative sm:h-auto h-[620px] bg-center bg-cover bg-white ">
+      class="relative sm:h-auto h-[620px] bg-center bg-cover bg-white select-none">
       <div class="flex items-center pt-20 flex-col h-full space-y-8">
         <h1 class="text-black md:flex hidden items-center justify-center" style="letter-spacing: -2px">
           Gallery

@@ -476,6 +476,13 @@
 
     });
   </script>
+
+  <script>
+    const goto_register = () => {
+      window.location.href = "/register"
+    }
+  </script>
+
   <article class="scroller" id="article">
 
     <!-- Page 1 -->
@@ -551,6 +558,7 @@
           <!-- Register Button -->
           <div class="pt-10 flex justify-center">
             <button
+            onclick="goto_register()"
               class="bg-transparent text-white text-bold md:border-[5px] border-[3px] border-white text-bold rounded-full sm:py-4 py-2 md:px-28 px-20 font-bold">
               <h2>Go to Register</h2>
             </button>
@@ -678,7 +686,7 @@
                 ฟังดูน่าสนใจใช่ไหม? ลงทะเบียนได้เลย!
               </h2>
 
-              <button class="button font-bold ">
+              <button onclick="goto_register()" class="button font-bold ">
                 <h2 class="md:inline hidden">ไปหน้าลงทะเบียน</h2>
                 <h4 class="md:hidden inline">ไปหน้าลงทะเบียน</h4>
               </button>

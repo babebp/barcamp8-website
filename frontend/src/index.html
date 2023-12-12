@@ -163,6 +163,7 @@
       margin-top: -300px;
     }
 
+
     /* xl */
     @media (max-width: 1200px) {
       .container_gallery {
@@ -222,6 +223,13 @@
       .button {
         width: 180px;
         height: 40px;
+      }
+
+    }
+
+    @media (min-width: 302px) {
+      .alert {
+        padding-top: 71px !important;
       }
 
     }
@@ -382,6 +390,10 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
+
+    .alert {
+      padding-top: 33%;
+    }
   </style>
 </head>
 
@@ -490,7 +502,7 @@
 
       <!-- Alert -->
       <div role="alert"
-        class="relative bg-black bg-opacity-50 w-full pt-[71px] pb-4 z-30 flex flex-row text-white text-opacity-50 select-none"
+        class="relative alert bg-black bg-opacity-50 w-full  pb-4 z-30 flex flex-row text-white text-opacity-50 select-none"
         id="alertContainer">
         <div class="overflow-y-hidden [&::-webkit-scrollbar]:hidden overflow-x-clip">
           <div class="py-[2px] animate-marquee whitespace-nowrap ">
@@ -527,7 +539,7 @@
         <!-- Logo -->
         <div class="lg:pt-0 pt-20">
           <img src="img/logooo.png" alt="รูปภาพ" class="md:inline hidden min-w-[700px] max-w-[1000px] w-full" />
-          <img src="img/mobile_logo2.png" alt="รูปภาพ" class="md:hidden inline min-w-[200px] max-w-[280px]" />
+          <img src="img/mobile_logo2.png" alt="รูปภาพ" class="md:hidden inline min-w-[200px] max-w-[280px] w-full " />
         </div>
         <!-- <img src="img/logooo.png" class="w-[60%] left-[50%] md:inline hidden" />
         <img src="img/mobile_logo2.png" class="w-[50%] left-[50%] md:hidden inline" /> -->
